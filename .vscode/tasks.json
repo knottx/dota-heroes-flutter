@@ -1,0 +1,66 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Flutter: flutter gen-l10n",
+        "group": "build",
+        "type": "flutter",
+        "command": "flutter",
+        "args": ["gen-l10n"]
+      },
+      {
+        "label": "Flutter: flutter pub run build_runner clean",
+        "group": "build",
+        "type": "flutter",
+        "command": "flutter",
+        "args": ["pub", "run", "build_runner", "clean"]
+      },
+      {
+        "label": "Flutter: flutter pub run build_runner build",
+        "group": "build",
+        "type": "flutter",
+        "command": "flutter",
+        "args": [
+          "pub",
+          "run",
+          "build_runner",
+          "build",
+          "--delete-conflicting-outputs"
+        ]
+      },
+      {
+        "label": "Flutter: flutter pub get",
+        "group": "build",
+        "type": "flutter",
+        "command": "flutter",
+        "args": [
+          "pub",
+          "get",
+        ],
+      },
+      {
+        "label": "Flutter: flutter build apk",
+        "group": "build",
+        "type": "flutter",
+        "command": "flutter",
+        "args": [
+          "build", 
+          "apk", 
+          "-t", 
+          "lib/main.dart",
+        ],
+      },
+      {
+        "label": "Flutter: flutter build ipa",
+        "group": "build",
+        "type": "flutter",
+        "command": "flutter",
+        "args": [
+          "build", 
+          "ipa", 
+          "-t", 
+          "lib/main.dart",
+        ],
+      },
+    ],
+}
