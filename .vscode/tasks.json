@@ -1,0 +1,48 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "spider: spider build",
+        "group": "build",
+        "type": "shell",
+        "command": "spider",
+        "args": [
+          "build",
+        ],
+      },
+      {
+        "label": "Flutter: flutter pub get",
+        "group": "build",
+        "type": "flutter",
+        "command": "flutter",
+        "args": [
+          "pub",
+          "get",
+        ],
+      },
+      {
+        "label": "Flutter: flutter build apk",
+        "group": "build",
+        "type": "flutter",
+        "command": "flutter",
+        "args": [
+          "build", 
+          "apk", 
+          "-t", 
+          "lib/main.dart",
+        ],
+      },
+      {
+        "label": "Flutter: flutter build ipa",
+        "group": "build",
+        "type": "flutter",
+        "command": "flutter",
+        "args": [
+          "build", 
+          "ipa", 
+          "-t", 
+          "lib/main.dart",
+        ],
+      },
+    ],
+}

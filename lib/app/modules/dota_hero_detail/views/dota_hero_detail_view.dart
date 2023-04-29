@@ -1,0 +1,85 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import 'package:get/get.dart';
+import 'package:dota_heroes/app/modules/dota_hero_detail/widgets/dota_hero_detail_attribute_section.dart';
+import 'package:dota_heroes/app/modules/dota_hero_detail/widgets/dota_hero_detail_header_section.dart';
+import 'package:dota_heroes/app/modules/dota_hero_detail/widgets/dota_hero_detail_roles_section.dart';
+import 'package:dota_heroes/app/modules/dota_hero_detail/widgets/dota_hero_detail_stats_section.dart';
+import 'package:dota_heroes/resources/resources.dart';
+
+import '../controllers/dota_hero_detail_controller.dart';
+
+class DotaHeroDetailView extends GetView<DotaHeroDetailController> {
+  const DotaHeroDetailView({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Image.asset(
+          ImageName.dota2Logo,
+          height: 32,
+        ),
+        centerTitle: true,
+        actions: [
+          _favoriteAppBarButton(),
+        ],
+      ),
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.asset(
+              ImageName.background,
+              fit: BoxFit.cover,
+            ),
+          ),
+          Positioned.fill(
+            child: SingleChildScrollView(
+              child: SafeArea(
+                child: _body(),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  _favoriteAppBarButton() {
+    return Obx(() {
+      final favoriteIds = controller.favoriteIds;
+      final isFavorite = favoriteIds.contains(controller.dotaHero.id);
+      return IconButton(
+        onPressed: controller.onTapFavorite,
+        icon: Icon(
+          isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart,
+          size: 24,
+        ),
+      );
+    });
+  }
+
+  _body() {
+    final dotaHero = controller.dotaHero;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        DotaHeroDetailHeaderSection(dotaHero: dotaHero),
+        DotaHeroDetailAttributeSection(dotaHero: dotaHero),
+        const Divider(
+          thickness: 0.5,
+          height: 0.5,
+          color: Colors.grey,
+        ),
+        DotaHeroDetailRolesSection(dotaHero: dotaHero),
+        const Divider(
+          thickness: 0.5,
+          height: 0.5,
+          color: Colors.grey,
+        ),
+        DotaHeroDetailStatsSection(dotaHero: dotaHero),
+        const SizedBox(height: 16),
+      ],
+    );
+  }
+}
