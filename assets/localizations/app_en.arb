@@ -1,0 +1,21 @@
+{
+    "@@locale": "en",
+    "commonCancel": "Cancel",
+    "commonOk": "OK",
+    "errorTitle": "Sorry",
+    "attackTypeMelee": "Melee",
+    "attackTypeRanged": "Ranged",
+    "attributeStr": "Strength",
+    "attributeAgi": "Agility",
+    "attributeInt": "Intelligence",
+    "attributeUniversal": "universal",
+    "roleCarry": "Carry",
+    "roleSupport": "Support",
+    "roleNuker": "Nuker",
+    "roleDisabler": "Disabler",
+    "roleJungler": "Jungler",
+    "roleDurable": "Durable",
+    "roleEscape": "Escape",
+    "rolePusher": "Pusher",
+    "roleInitiator": "Initiator"
+}
