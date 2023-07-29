@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:dota_heroes/app/constants/app_colors.dart';
 import 'package:dota_heroes/app/constants/dota_hero_attribute.dart';
 import 'package:dota_heroes/app/data/models/dota_hero_model.dart';

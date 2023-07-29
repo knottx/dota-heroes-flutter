@@ -109,7 +109,7 @@ class DotaHeroDetailStatsSection extends StatelessWidget {
     );
   }
 
-  _statItem({
+  Widget _statItem({
     required DotaHeroStat stat,
     required String value,
   }) {

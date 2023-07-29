@@ -1,4 +1,30 @@
 include: package:flutter_lints/flutter.yaml
+
 linter:
   rules:
-    
+    always_use_package_imports: true
+    always_declare_return_types: true
+    avoid_print: true
+    prefer_is_empty: true
+    prefer_is_not_empty: true
+    prefer_is_not_operator: true
+    prefer_single_quotes: true
+    require_trailing_commas: true
+    unnecessary_overrides: false
+    avoid_function_literals_in_foreach_calls: false
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - test/image_name_test.dart
+    - test/svgimage_name_test.dart
+  errors:
+    always_use_package_imports: error
+    always_declare_return_types: error
+    avoid_print: error
+    prefer_is_empty: error
+    prefer_is_not_empty: error
+    prefer_is_not_operator: error
+    prefer_single_quotes: error
+    require_trailing_commas: error
+    invalid_use_of_protected_member: ignore

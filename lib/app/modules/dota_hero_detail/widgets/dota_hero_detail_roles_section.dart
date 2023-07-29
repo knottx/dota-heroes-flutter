@@ -2,7 +2,6 @@ import 'package:dota_heroes/app/constants/app_colors.dart';
 import 'package:dota_heroes/app/constants/dota_hero_role.dart';
 import 'package:dota_heroes/app/data/models/dota_hero_model.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class DotaHeroDetailRolesSection extends StatelessWidget {
   final DotaHero dotaHero;
@@ -77,11 +76,11 @@ class DotaHeroDetailRolesSection extends StatelessWidget {
     );
   }
 
-  _roleItem({
+  Widget _roleItem({
     required DotaHeroRole role,
   }) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.only(bottom: 16),
       child: Text(
         role.title,
         textAlign: TextAlign.center,

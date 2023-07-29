@@ -1,3 +1,5 @@
+// ignore_for_file: always_use_package_imports
+
 import 'package:get/get.dart';
 
 import '../modules/dota_hero_detail/bindings/dota_hero_detail_binding.dart';
@@ -12,6 +14,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
+  // ignore: constant_identifier_names
   static const INITIAL = Routes.SPLASH;
 
   static final routes = [

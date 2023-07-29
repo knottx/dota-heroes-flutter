@@ -1,6 +1,6 @@
-import 'package:dio/dio.dart';
+// ignore_for_file: always_use_package_imports
+
 import 'package:dota_heroes/app/constants/app_colors.dart';
-import 'package:dota_heroes/app/core/api/dota_hero_api.dart';
 import 'package:dota_heroes/app/core/dio_client.dart';
 import 'package:dota_heroes/app/managers/session_manager.dart';
 import 'package:flutter/material.dart';

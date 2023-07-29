@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
 class CurlLogger {
-  static log(RequestOptions requestOptions) {
+  static void log(RequestOptions requestOptions) {
     if (kDebugMode) {
       try {
         dev.log(_cURLRepresentation(requestOptions));

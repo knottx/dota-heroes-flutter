@@ -84,7 +84,7 @@ class DotaHeroDetailAttributeSection extends StatelessWidget {
     );
   }
 
-  _healthAndManaBar({
+  Widget _healthAndManaBar({
     required List<Color> gradientColors,
     required double base,
     required double regen,
@@ -130,7 +130,7 @@ class DotaHeroDetailAttributeSection extends StatelessWidget {
     );
   }
 
-  _attributeItem({
+  Widget _attributeItem({
     required DotaHeroAttribute attribute,
     required double base,
     required double gain,

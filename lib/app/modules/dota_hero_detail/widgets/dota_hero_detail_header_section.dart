@@ -1,9 +1,9 @@
 import 'package:dota_heroes/app/constants/app_colors.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:dota_heroes/app/constants/dota_hero_attack_type.dart';
 import 'package:dota_heroes/app/constants/dota_hero_attribute.dart';
 import 'package:dota_heroes/app/data/models/dota_hero_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class DotaHeroDetailHeaderSection extends StatelessWidget {
@@ -25,7 +25,7 @@ class DotaHeroDetailHeaderSection extends StatelessWidget {
     );
   }
 
-  _title() {
+  Widget _title() {
     final primaryAttr = dotaHero.primaryAttr;
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
@@ -67,7 +67,7 @@ class DotaHeroDetailHeaderSection extends StatelessWidget {
     );
   }
 
-  _body() {
+  Widget _body() {
     final potraitWidth = Get.width;
     final potraitHeight = potraitWidth * 0.75;
     return Stack(

@@ -1,14 +1,12 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
+import 'package:dota_heroes/app/modules/dota_hero_detail/controllers/dota_hero_detail_controller.dart';
 import 'package:dota_heroes/app/modules/dota_hero_detail/widgets/dota_hero_detail_attribute_section.dart';
 import 'package:dota_heroes/app/modules/dota_hero_detail/widgets/dota_hero_detail_header_section.dart';
 import 'package:dota_heroes/app/modules/dota_hero_detail/widgets/dota_hero_detail_roles_section.dart';
 import 'package:dota_heroes/app/modules/dota_hero_detail/widgets/dota_hero_detail_stats_section.dart';
 import 'package:dota_heroes/resources/resources.dart';
-
-import '../controllers/dota_hero_detail_controller.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DotaHeroDetailView extends GetView<DotaHeroDetailController> {
   const DotaHeroDetailView({Key? key}) : super(key: key);
@@ -45,7 +43,7 @@ class DotaHeroDetailView extends GetView<DotaHeroDetailController> {
     );
   }
 
-  _favoriteAppBarButton() {
+  Widget _favoriteAppBarButton() {
     return Obx(() {
       final favoriteIds = controller.favoriteIds;
       final isFavorite = favoriteIds.contains(controller.dotaHero.id);
@@ -59,7 +57,7 @@ class DotaHeroDetailView extends GetView<DotaHeroDetailController> {
     });
   }
 
-  _body() {
+  Widget _body() {
     final dotaHero = controller.dotaHero;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

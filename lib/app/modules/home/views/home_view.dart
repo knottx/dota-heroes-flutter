@@ -1,17 +1,12 @@
-import 'package:dota_heroes/app/constants/app_colors.dart';
-import 'package:dota_heroes/app/constants/dota_hero_attribute.dart';
 import 'package:dota_heroes/app/constants/sort_type.dart';
 import 'package:dota_heroes/app/data/models/dota_hero_model.dart';
 import 'package:dota_heroes/app/global_widgets/loading_indicator.dart';
+import 'package:dota_heroes/app/modules/home/controllers/home_controller.dart';
 import 'package:dota_heroes/app/modules/home/widgets/home_app_bar_bottom.dart';
 import 'package:dota_heroes/app/modules/home/widgets/home_dota_hero_tile.dart';
 import 'package:dota_heroes/resources/resources.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
-import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
@@ -50,7 +45,7 @@ class HomeView extends GetView<HomeController> {
     );
   }
 
-  _appBarBottom(BuildContext context) {
+  PreferredSizeWidget _appBarBottom(BuildContext context) {
     return HomeAppBarBottom(
       filteredAttribute: controller.filteredAttribute,
       onTapFilteredAttribute: controller.onTapFilteredAtttibute,
@@ -63,7 +58,7 @@ class HomeView extends GetView<HomeController> {
     );
   }
 
-  _body() {
+  Widget _body() {
     return Obx(() {
       final dataSource = controller.dataSource;
 

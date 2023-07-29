@@ -120,10 +120,10 @@ class HomeAppBarBottom extends StatelessWidget implements PreferredSizeWidget {
                   size: 24,
                 ),
                 contentPadding: const EdgeInsets.only(left: 8),
-                enabledBorder: OutlineInputBorder(
+                enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide.none,
                 ),
-                focusedBorder: OutlineInputBorder(
+                focusedBorder: const OutlineInputBorder(
                   borderSide: BorderSide.none,
                 ),
                 suffixIcon: Obx(() {

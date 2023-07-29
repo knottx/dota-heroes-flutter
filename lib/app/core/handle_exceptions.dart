@@ -19,7 +19,7 @@ class HandleExceptions {
     }
   }
 
-  static _fromDioError({
+  static AppError _fromDioError({
     required DioError dioError,
     required String? apiPath,
   }) {
