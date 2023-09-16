@@ -53,7 +53,7 @@ class DotaHeroDetailAttributeSection extends StatelessWidget {
                     gradientColors: AppColors.manaBar,
                     base: dotaHero.mana,
                     regen: dotaHero.manaRegen,
-                  )
+                  ),
                 ],
               ),
               const SizedBox(width: 32),

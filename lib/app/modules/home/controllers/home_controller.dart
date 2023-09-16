@@ -4,6 +4,7 @@ import 'package:dota_heroes/app/core/api/dota_hero_api.dart';
 import 'package:dota_heroes/app/data/models/dota_hero_model.dart';
 import 'package:dota_heroes/app/extensions/bool_extension.dart';
 import 'package:dota_heroes/app/managers/session_manager.dart';
+import 'package:dota_heroes/app/modules/dota_hero_detail/dota_hero_detail_arguments.dart';
 import 'package:dota_heroes/app/routes/app_pages.dart';
 import 'package:dota_heroes/app/utils/show_alert.dart';
 import 'package:flutter/material.dart';
@@ -85,7 +86,9 @@ class HomeController extends GetxController {
   void onSelectedDotaHero(DotaHero dotaHero) {
     Get.toNamed(
       Routes.DOTA_HERO_DETAIL,
-      arguments: dotaHero,
+      arguments: DotaHeroDetailArguments(
+        dotaHero: dotaHero,
+      ),
     );
   }
 

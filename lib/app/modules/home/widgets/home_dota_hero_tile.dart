@@ -29,7 +29,7 @@ class HomeDotaHeroTile extends StatelessWidget {
             blurRadius: 1,
             spreadRadius: 1,
             blurStyle: BlurStyle.normal,
-          )
+          ),
         ],
       ),
       child: Stack(

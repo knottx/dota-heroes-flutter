@@ -2,6 +2,7 @@ import 'package:dota_heroes/app/constants/sort_type.dart';
 import 'package:dota_heroes/app/data/models/dota_hero_model.dart';
 import 'package:dota_heroes/app/global_widgets/loading_indicator.dart';
 import 'package:dota_heroes/app/modules/home/controllers/home_controller.dart';
+import 'package:dota_heroes/app/modules/home/home_arguments.dart';
 import 'package:dota_heroes/app/modules/home/widgets/home_app_bar_bottom.dart';
 import 'package:dota_heroes/app/modules/home/widgets/home_dota_hero_tile.dart';
 import 'package:dota_heroes/resources/resources.dart';
@@ -9,7 +10,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+  @override
+  // ignore: overridden_fields
+  final String tag = (Get.arguments as HomeArguments).tag;
+
+  HomeView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Stack(

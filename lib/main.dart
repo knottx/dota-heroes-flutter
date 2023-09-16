@@ -18,7 +18,6 @@ void main() async {
 
   runApp(
     GetMaterialApp(
-      title: 'Dota Heroes',
       theme: ThemeData(
         primarySwatch: generateMaterialColor(
           color: AppColors.primaryBlack,
@@ -33,6 +32,7 @@ void main() async {
       ),
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      defaultTransition: Transition.cupertino,
     ),
   );
 }
@@ -40,7 +40,7 @@ void main() async {
 Future<void> _setupInstance() async {
   await GetStorage.init();
 
-  Get.put(SessionManager(GetStorage()));
+  Get.put(SessionManager());
 
   Get.put(DioClient());
 

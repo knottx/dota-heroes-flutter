@@ -22,19 +22,16 @@ class AppPages {
       name: _Paths.SPLASH,
       page: () => const SplashView(),
       binding: SplashBinding(),
-      transition: Transition.cupertino,
     ),
     GetPage(
       name: _Paths.HOME,
-      page: () => const HomeView(),
+      page: () => HomeView(),
       binding: HomeBinding(),
-      transition: Transition.cupertino,
     ),
     GetPage(
       name: _Paths.DOTA_HERO_DETAIL,
-      page: () => const DotaHeroDetailView(),
+      page: () => DotaHeroDetailView(),
       binding: DotaHeroDetailBinding(),
-      transition: Transition.cupertino,
     ),
   ];
 }

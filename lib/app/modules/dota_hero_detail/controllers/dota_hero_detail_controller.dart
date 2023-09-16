@@ -1,18 +1,18 @@
-import 'package:dota_heroes/app/data/models/dota_hero_model.dart';
 import 'package:dota_heroes/app/managers/session_manager.dart';
+import 'package:dota_heroes/app/modules/dota_hero_detail/dota_hero_detail_arguments.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class DotaHeroDetailController extends GetxController {
   final SessionManager _sessionManager = Get.find();
 
-  late final DotaHero dotaHero;
+  late final DotaHeroDetailArguments arguments;
   late final RxList<int> favoriteIds;
 
   @override
   void onInit() {
     super.onInit();
-    dotaHero = Get.arguments;
+    arguments = Get.arguments;
     favoriteIds = _sessionManager.favoriteIds;
   }
 
@@ -28,7 +28,7 @@ class DotaHeroDetailController extends GetxController {
 
   void onTapFavorite() {
     HapticFeedback.selectionClick();
-    final id = dotaHero.id;
+    final id = arguments.dotaHero.id;
     if (id != null) {
       _sessionManager.setFavorite(id);
     }

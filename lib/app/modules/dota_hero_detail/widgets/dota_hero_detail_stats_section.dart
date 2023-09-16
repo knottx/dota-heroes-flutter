@@ -103,7 +103,7 @@ class DotaHeroDetailStatsSection extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );
