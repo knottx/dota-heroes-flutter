@@ -26,7 +26,7 @@ class DotaHeroDetailHeaderSection extends StatelessWidget {
   }
 
   Widget _title() {
-    final primaryAttr = dotaHero.primaryAttr;
+    final primaryAttr = dotaHero.primaryAttr();
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
       child: Column(
@@ -80,7 +80,7 @@ class DotaHeroDetailHeaderSection extends StatelessWidget {
               fit: BoxFit.contain,
               alignment: Alignment.centerRight,
               image: NetworkImage(
-                dotaHero.potraitImageUrl,
+                dotaHero.potraitImageUrl(),
               ),
             ),
           ),
@@ -103,13 +103,13 @@ class DotaHeroDetailHeaderSection extends StatelessWidget {
               Row(
                 children: [
                   SvgPicture.asset(
-                    dotaHero.attackType?.svgImageAssetName ?? '',
+                    dotaHero.attackType()?.svgImageAssetName ?? '',
                     width: 24,
                   ),
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      dotaHero.attackType?.title.toUpperCase() ?? '',
+                      dotaHero.attackType()?.title.toUpperCase() ?? '',
                       textAlign: TextAlign.left,
                       style: const TextStyle(
                         color: AppColors.primary,

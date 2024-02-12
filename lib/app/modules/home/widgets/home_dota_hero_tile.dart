@@ -19,7 +19,7 @@ class HomeDotaHeroTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final primaryAttr = dotaHero.primaryAttr;
+    final primaryAttr = dotaHero.primaryAttr();
     return Container(
       decoration: const BoxDecoration(
         boxShadow: [
@@ -36,7 +36,7 @@ class HomeDotaHeroTile extends StatelessWidget {
         children: [
           Positioned.fill(
             child: Image.network(
-              dotaHero.imageUrl,
+              dotaHero.imageUrl(),
               fit: BoxFit.cover,
               loadingBuilder: (context, child, loadingProgress) {
                 if (loadingProgress != null) {

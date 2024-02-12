@@ -45,8 +45,8 @@ class DotaHeroDetailStatsSection extends StatelessWidget {
                     _statItem(
                       stat: DotaHeroStat.damage,
                       value: [
-                        dotaHero.attackMin.toStringAsFixed(0),
-                        dotaHero.attackMax.toStringAsFixed(0),
+                        dotaHero.attackMin().toStringAsFixed(0),
+                        dotaHero.attackMax().toStringAsFixed(0),
                       ].join('-'),
                     ),
                     _statItem(
@@ -71,7 +71,7 @@ class DotaHeroDetailStatsSection extends StatelessWidget {
                   children: [
                     _statItem(
                       stat: DotaHeroStat.armor,
-                      value: dotaHero.armor.toStringAsFixed(1),
+                      value: dotaHero.armor().toStringAsFixed(1),
                     ),
                     _statItem(
                       stat: DotaHeroStat.magicResistance,

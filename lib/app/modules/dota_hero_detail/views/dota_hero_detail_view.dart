@@ -14,7 +14,7 @@ class DotaHeroDetailView extends GetView<DotaHeroDetailController> {
   // ignore: overridden_fields
   final String tag = (Get.arguments as DotaHeroDetailArguments).tag;
 
-  DotaHeroDetailView({Key? key}) : super(key: key);
+  DotaHeroDetailView({super.key});
 
   @override
   Widget build(BuildContext context) {

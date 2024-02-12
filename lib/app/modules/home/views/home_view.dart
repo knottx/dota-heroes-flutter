@@ -14,7 +14,7 @@ class HomeView extends GetView<HomeController> {
   // ignore: overridden_fields
   final String tag = (Get.arguments as HomeArguments).tag;
 
-  HomeView({Key? key}) : super(key: key);
+  HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +93,7 @@ class HomeView extends GetView<HomeController> {
       final filterAttribute = controller.filteredAttribute.value;
       if (filterAttribute != null) {
         displayHeroes = displayHeroes
-            .where((e) => e.primaryAttr == filterAttribute)
+            .where((e) => e.primaryAttr() == filterAttribute)
             .toList();
       }
 
@@ -141,6 +141,7 @@ class HomeView extends GetView<HomeController> {
             itemBuilder: (context, index) {
               final dotaHero = displayHeroes[index];
               return HomeDotaHeroTile(
+                key: UniqueKey(),
                 dotaHero: dotaHero,
                 isFavorite: favoriteIds.contains(dotaHero.id),
                 onSelected: () {

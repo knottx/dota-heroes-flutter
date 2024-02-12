@@ -85,7 +85,7 @@ class DotaHeroDetailRolesSection extends StatelessWidget {
         role.title,
         textAlign: TextAlign.center,
         style: TextStyle(
-          color: dotaHero.roles.contains(role)
+          color: dotaHero.roles().contains(role)
               ? AppColors.primary
               : AppColors.tertiary,
           fontSize: 16,

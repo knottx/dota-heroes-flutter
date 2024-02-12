@@ -19,6 +19,7 @@ void main() async {
   runApp(
     GetMaterialApp(
       theme: ThemeData(
+        useMaterial3: false,
         primarySwatch: generateMaterialColor(
           color: AppColors.primaryBlack,
         ),

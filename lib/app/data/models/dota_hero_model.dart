@@ -125,65 +125,65 @@ class DotaHero {
 }
 
 extension DotaHeroExtension on DotaHero {
-  String get potraitImageUrl {
+  String potraitImageUrl() {
     final path = img?.replaceAll(
       '/apps/dota2/images/dota_react/heroes/',
       '/apps/dota2/videos/dota_react/heroes/renders/',
     );
-    return 'https://cdn.cloudflare.steamstatic.com${path ?? ''}';
+    return '${AppConstants.imageBaseUrl}${path ?? ''}';
   }
 
-  String get potraitVideoUrl {
-    return potraitImageUrl.replaceAll(
+  String potraitVideoUrl() {
+    return potraitImageUrl().replaceAll(
       '.png',
       '.webm',
     );
   }
 
-  String get imageUrl {
-    return '${AppConstants.baseUrl}${img ?? ''}';
+  String imageUrl() {
+    return '${AppConstants.imageBaseUrl}${img ?? ''}';
   }
 
-  DotaHeroAttribute? get primaryAttr {
+  DotaHeroAttribute? primaryAttr() {
     return DotaHeroAttribute.values.firstWhereOrNull(
       (e) => e.keyValue == _primaryAttr,
     );
   }
 
-  DotaHeroAttackType? get attackType {
+  DotaHeroAttackType? attackType() {
     return DotaHeroAttackType.values.firstWhereOrNull(
       (e) => e.keyValue == _attackType,
     );
   }
 
-  List<DotaHeroRole> get roles {
+  List<DotaHeroRole> roles() {
     return DotaHeroRole.values
         .where((e) => (_roles ?? []).contains(e.keyValue))
         .toList();
   }
 
-  double get health {
+  double health() {
     return (baseHealth ?? 0) + ((baseStr ?? 0) * 20.0);
   }
 
-  double get healthRegen {
+  double healthRegen() {
     return (baseHealthRegen ?? 0) + ((baseStr ?? 0) * 0.1);
   }
 
-  double get mana {
+  double mana() {
     return (baseMana ?? 0) + ((baseInt ?? 0) * 12.0);
   }
 
-  double get manaRegen {
+  double manaRegen() {
     return (baseManaRegen ?? 0) + ((baseInt ?? 0) * 0.05);
   }
 
-  double get armor {
+  double armor() {
     return (baseArmor ?? 0) + ((baseAgi ?? 0) * 0.167);
   }
 
-  double get attackMin {
-    switch (primaryAttr) {
+  double attackMin() {
+    switch (primaryAttr()) {
       case DotaHeroAttribute.strength:
         return (baseAttackMin ?? 0) + (baseStr ?? 0);
       case DotaHeroAttribute.agility:
@@ -200,8 +200,8 @@ extension DotaHeroExtension on DotaHero {
     }
   }
 
-  double get attackMax {
-    switch (primaryAttr) {
+  double attackMax() {
+    switch (primaryAttr()) {
       case DotaHeroAttribute.strength:
         return (baseAttackMax ?? 0) + (baseStr ?? 0);
       case DotaHeroAttribute.agility:

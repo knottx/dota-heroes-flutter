@@ -41,18 +41,18 @@ class DotaHeroDetailAttributeSection extends StatelessWidget {
               Column(
                 children: [
                   Image.network(
-                    dotaHero.imageUrl,
+                    dotaHero.imageUrl(),
                     width: 160,
                   ),
                   _healthAndManaBar(
                     gradientColors: AppColors.healthBar,
-                    base: dotaHero.health,
-                    regen: dotaHero.healthRegen,
+                    base: dotaHero.health(),
+                    regen: dotaHero.healthRegen(),
                   ),
                   _healthAndManaBar(
                     gradientColors: AppColors.manaBar,
-                    base: dotaHero.mana,
-                    regen: dotaHero.manaRegen,
+                    base: dotaHero.mana(),
+                    regen: dotaHero.manaRegen(),
                   ),
                 ],
               ),
