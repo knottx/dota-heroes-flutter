@@ -1,4 +1,4 @@
-import 'package:dota_heroes/resources/resources.dart';
+import 'package:dota_heroes/presentation/generated/assets.gen.dart';
 
 enum DotaHeroStat {
   damage,
@@ -15,23 +15,23 @@ enum DotaHeroStat {
   String get iconAssetName {
     switch (this) {
       case DotaHeroStat.damage:
-        return ImageName.iconDamage;
+        return Assets.images.iconDamage.path;
       case DotaHeroStat.attackRate:
-        return ImageName.iconAttackRate;
+        return Assets.images.iconAttackRate.path;
       case DotaHeroStat.attackRange:
-        return ImageName.iconAttackRange;
+        return Assets.images.iconAttackRange.path;
       case DotaHeroStat.projectileSpeed:
-        return ImageName.iconProjectileSpeed;
+        return Assets.images.iconProjectileSpeed.path;
       case DotaHeroStat.armor:
-        return ImageName.iconArmor;
+        return Assets.images.iconArmor.path;
       case DotaHeroStat.magicResistance:
-        return ImageName.iconMagicResist;
+        return Assets.images.iconMagicResist.path;
       case DotaHeroStat.movementSpeed:
-        return ImageName.iconMovementSpeed;
+        return Assets.images.iconMovementSpeed.path;
       case DotaHeroStat.turnRate:
-        return ImageName.iconTurnRate;
+        return Assets.images.iconTurnRate.path;
       case DotaHeroStat.vision:
-        return ImageName.iconVision;
+        return Assets.images.iconVision.path;
     }
   }
 }

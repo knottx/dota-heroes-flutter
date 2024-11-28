@@ -1,6 +1,6 @@
 import 'dart:developer' as dev;
 
-import 'package:dota_heroes/app/data/models/app_error_model.dart';
+import 'package:dota_heroes/app/models/app_error.dart';
 import 'package:flutter/foundation.dart';
 
 enum Logger {
