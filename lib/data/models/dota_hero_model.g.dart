@@ -11,13 +11,13 @@ DotaHeroModel _$DotaHeroModelFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       localizedName: json['localized_name'] as String?,
-      primaryAttrField: $enumDecodeNullable(
+      primaryAttr: $enumDecodeNullable(
           _$DotaHeroAttributeEnumMap, json['primary_attr'],
           unknownValue: JsonKey.nullForUndefinedEnumValue),
-      attackTypeField: $enumDecodeNullable(
+      attackType: $enumDecodeNullable(
           _$DotaHeroAttackTypeEnumMap, json['attack_type'],
           unknownValue: JsonKey.nullForUndefinedEnumValue),
-      rolesField: (json['roles'] as List<dynamic>?)
+      roles: (json['roles'] as List<dynamic>?)
           ?.map((e) => $enumDecodeNullable(_$DotaHeroRoleEnumMap, e,
               unknownValue: JsonKey.nullForUndefinedEnumValue))
           .toList(),

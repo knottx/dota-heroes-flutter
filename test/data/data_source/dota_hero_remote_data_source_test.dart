@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:dota_heroes/app/core/api/api_client.dart';
 import 'package:dota_heroes/data/data_source/dota_hero_remote_data_source.dart';
-import 'package:dota_heroes/data/models/dota_hero_model.dart';
+import 'package:dota_heroes/domain/entities/dota_hero.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -45,7 +45,7 @@ void main() {
 
       final result = await dataSource.getHeroStats();
 
-      expect(result, isA<List<DotaHeroModel>>());
+      expect(result, isA<List<DotaHero>>());
       expect(result.length, 2);
       expect(result[0].id, 1);
       expect(result[1].name, 'npc_dota_hero_bane');

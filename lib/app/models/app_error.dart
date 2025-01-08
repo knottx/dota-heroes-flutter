@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 
@@ -25,7 +24,7 @@ class AppError extends Equatable implements Exception {
     return [
       message,
       debugMessage,
-    ].whereNotNull().where((e) => e.isNotEmpty).join('\n');
+    ].nonNulls.where((e) => e.isNotEmpty).join('\n');
   }
 
   static AppError fromError(Object error) {
@@ -65,7 +64,7 @@ class AppError extends Equatable implements Exception {
         statusCode,
         method,
         uri.toString(),
-      ].whereNotNull().join(' ');
+      ].nonNulls.join(' ');
 
       return AppError(
         message: message,

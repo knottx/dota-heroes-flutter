@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:dota_heroes/domain/entities/dota_hero.dart';
 import 'package:dota_heroes/domain/entities/dota_hero_role.dart';
 import 'package:dota_heroes/presentation/style/app_colors.dart';
@@ -81,7 +80,7 @@ class DotaHeroDetailRolesSection extends StatelessWidget {
     BuildContext context, {
     required DotaHeroRole role,
   }) {
-    final roles = dotaHero?.roles?.whereNotNull() ?? [];
+    final roles = dotaHero?.roles?.nonNulls ?? [];
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: Text(

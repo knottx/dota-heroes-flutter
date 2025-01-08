@@ -1,10 +1,10 @@
 import 'package:equatable/equatable.dart';
 
 class SessionState extends Equatable {
-  final List<int> favoriteIds;
+  final Set<int> favoriteIds;
 
   const SessionState({
-    this.favoriteIds = const [],
+    this.favoriteIds = const {},
   });
 
   @override
@@ -13,7 +13,7 @@ class SessionState extends Equatable {
       ];
 
   SessionState copyWith({
-    List<int>? favoriteIds,
+    Set<int>? favoriteIds,
   }) {
     return SessionState(
       favoriteIds: favoriteIds ?? this.favoriteIds,

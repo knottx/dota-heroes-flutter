@@ -1,5 +1,4 @@
 import 'package:dota_heroes/data/data_source/dota_hero_remote_data_source.dart';
-import 'package:dota_heroes/data/models/dota_hero_model.dart';
 import 'package:dota_heroes/data/repositories/dota_hero_repository_impl.dart';
 import 'package:dota_heroes/domain/entities/dota_hero.dart';
 import 'package:dota_heroes/domain/entities/dota_hero_attribute.dart';
@@ -21,18 +20,18 @@ void main() {
 
   group('getHeroStats', () {
     final tHeroModels = [
-      DotaHeroModel(
+      DotaHero(
         id: 1,
         name: 'npc_dota_hero_axe',
         localizedName: 'Axe',
-        primaryAttrField: DotaHeroAttribute.strength,
+        primaryAttr: DotaHeroAttribute.strength,
         baseHealth: 200,
       ),
-      DotaHeroModel(
+      DotaHero(
         id: 2,
         name: 'npc_dota_hero_bane',
         localizedName: 'Bane',
-        primaryAttrField: DotaHeroAttribute.intelligence,
+        primaryAttr: DotaHeroAttribute.intelligence,
         baseHealth: 180,
       ),
     ];

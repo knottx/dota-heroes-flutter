@@ -7,7 +7,7 @@ import 'dart:async' as _i3;
 
 import 'package:dota_heroes/data/data_source/dota_hero_remote_data_source.dart'
     as _i2;
-import 'package:dota_heroes/data/models/dota_hero_model.dart' as _i4;
+import 'package:dota_heroes/domain/entities/dota_hero.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -33,12 +33,11 @@ class MockDotaHeroRemoteDataSource extends _i1.Mock
   }
 
   @override
-  _i3.Future<List<_i4.DotaHeroModel>> getHeroStats() => (super.noSuchMethod(
+  _i3.Future<List<_i4.DotaHero>> getHeroStats() => (super.noSuchMethod(
         Invocation.method(
           #getHeroStats,
           [],
         ),
-        returnValue:
-            _i3.Future<List<_i4.DotaHeroModel>>.value(<_i4.DotaHeroModel>[]),
-      ) as _i3.Future<List<_i4.DotaHeroModel>>);
+        returnValue: _i3.Future<List<_i4.DotaHero>>.value(<_i4.DotaHero>[]),
+      ) as _i3.Future<List<_i4.DotaHero>>);
 }

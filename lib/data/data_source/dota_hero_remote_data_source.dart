@@ -1,12 +1,14 @@
 import 'package:dota_heroes/app/core/api/api_client.dart';
+import 'package:dota_heroes/data/mapper/dota_hero_mapper.dart';
 import 'package:dota_heroes/data/models/dota_hero_model.dart';
+import 'package:dota_heroes/domain/entities/dota_hero.dart';
 
 class DotaHeroRemoteDataSource {
   final ApiClient _apiClient;
 
   DotaHeroRemoteDataSource(this._apiClient);
 
-  Future<List<DotaHeroModel>> getHeroStats() async {
+  Future<List<DotaHero>> getHeroStats() async {
     final response = await _apiClient.get('/api/heroStats');
 
     List<DotaHeroModel> result = [];
@@ -15,6 +17,7 @@ class DotaHeroRemoteDataSource {
         result.add(DotaHeroModel.fromJson(e));
       });
     }
-    return result;
+
+    return result.map((e) => DotaHeroMapper.toEntity(e)).toList();
   }
 }

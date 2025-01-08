@@ -4,7 +4,6 @@ import 'package:dota_heroes/app/config/dio_initializer.dart';
 import 'package:dota_heroes/app/core/api/api_client.dart';
 import 'package:dota_heroes/app/core/session/session_cubit.dart';
 import 'package:dota_heroes/app/core/session/session_state.dart';
-import 'package:dota_heroes/app/core/session/user_data_manager.dart';
 import 'package:dota_heroes/app/router/app_router.dart';
 import 'package:dota_heroes/data/data_source/api_client_impl.dart';
 import 'package:dota_heroes/data/data_source/dota_hero_remote_data_source.dart';
@@ -16,19 +15,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final getIt = GetIt.instance;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await UserDataManager.initialize();
+  final sharedPrefs = await SharedPreferences.getInstance();
 
-  final sessionCubit = SessionCubit(
-    userDataManager: UserDataManager.instance,
-  );
+  final sessionCubit = SessionCubit(sharedPrefs);
 
-  await sessionCubit.loadSession();
+  sessionCubit.loadSession();
 
   final dio = initializeDio();
 

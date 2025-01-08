@@ -1,27 +1,20 @@
-import 'dart:convert';
-
-import 'package:dota_heroes/app/config/env.dart';
 import 'package:dota_heroes/app/core/session/session_state.dart';
-import 'package:dota_heroes/app/core/session/user_data_manager.dart';
-import 'package:dota_heroes/app/utils/logger.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SessionCubit extends Cubit<SessionState> {
-  final UserDataManager _userDataManager;
+  final SharedPreferences _sharedPrefs;
 
-  SessionCubit({
-    required UserDataManager userDataManager,
-  })  : _userDataManager = userDataManager,
-        super(const SessionState());
+  final _keyFavoriteIds = 'keyFavoriteIds';
 
-  Future<void> loadSession() async {
-    final result = await _userDataManager.read(
-      key: Env.keyFavoriteIds,
-    );
-    if (result != null) {
+  SessionCubit(this._sharedPrefs) : super(const SessionState());
+
+  void loadSession() {
+    final stringList = _sharedPrefs.getStringList(_keyFavoriteIds);
+    if (stringList != null) {
       emit(
         state.copyWith(
-          favoriteIds: jsonDecode(result).cast<int>(),
+          favoriteIds: stringList.map((e) => int.parse(e)).toSet(),
         ),
       );
     }
@@ -29,22 +22,16 @@ class SessionCubit extends Cubit<SessionState> {
   }
 
   void setFavorite(int id) async {
-    List<int> favoriteIds = [];
-    favoriteIds.addAll(state.favoriteIds);
+    Set<int> favoriteIds = Set.from(state.favoriteIds);
     if (favoriteIds.contains(id)) {
       favoriteIds.remove(id);
     } else {
       favoriteIds.add(id);
     }
 
-    try {
-      await _userDataManager.write(
-        key: Env.keyFavoriteIds,
-        value: jsonEncode(favoriteIds),
-      );
-      emit(state.copyWith(favoriteIds: favoriteIds));
-    } catch (error) {
-      Logger.logError(error);
-    }
+    await _sharedPrefs.setStringList(
+      _keyFavoriteIds,
+      favoriteIds.map((e) => e.toString()).toList(),
+    );
   }
 }
