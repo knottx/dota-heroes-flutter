@@ -1,4 +1,4 @@
-import 'package:dota_heroes/app/models/app_error.dart';
+import 'package:dota_heroes/app/core/app_error.dart';
 
 class Codable {
   Codable._();

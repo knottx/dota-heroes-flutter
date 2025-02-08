@@ -1,4 +1,4 @@
-import 'package:dota_heroes/presentation/generated/app_localizations.dart';
+import 'package:dota_heroes/generated/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 

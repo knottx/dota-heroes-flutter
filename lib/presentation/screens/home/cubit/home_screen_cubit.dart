@@ -1,6 +1,6 @@
 import 'package:dota_heroes/domain/entities/dota_hero_attribute.dart';
 import 'package:dota_heroes/domain/entities/sort_type.dart';
-import 'package:dota_heroes/domain/use_case/home_screen_use_case.dart';
+import 'package:dota_heroes/domain/use_cases/home_screen_use_case.dart';
 import 'package:dota_heroes/presentation/screens/home/cubit/home_screen_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -71,13 +71,17 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
   }
 
   void _getDotaHeroes() async {
-    try {
-      emit(state.loading());
-      final result = await _homeScreenUseCase.getHeroStats();
-      emit(state.ready(dotaHeroes: result));
-    } catch (error) {
-      emit(state.failure(error));
-      emit(state.ready());
-    }
+    emit(state.loading());
+
+    final result = await _homeScreenUseCase.getHeroStats();
+
+    result.when(
+      success: (data) {
+        emit(state.ready(dotaHeroes: data));
+      },
+      failure: (error) {
+        emit(state.failure(error));
+      },
+    );
   }
 }

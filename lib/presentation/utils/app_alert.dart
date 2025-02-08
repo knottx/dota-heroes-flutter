@@ -1,5 +1,5 @@
-import 'package:dota_heroes/app/models/app_error.dart';
-import 'package:dota_heroes/presentation/generated/app_localizations.dart';
+import 'package:dota_heroes/app/core/app_error.dart';
+import 'package:dota_heroes/generated/app_localizations.dart';
 import 'package:dota_heroes/presentation/style/app_colors.dart';
 import 'package:dota_heroes/presentation/style/app_text_style.dart';
 import 'package:flutter/material.dart';

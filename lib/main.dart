@@ -1,15 +1,13 @@
 // ignore_for_file: always_use_package_imports
 
-import 'package:dota_heroes/app/config/dio_initializer.dart';
-import 'package:dota_heroes/app/core/api/api_client.dart';
+import 'package:dota_heroes/app/config/api_client_initializer.dart';
 import 'package:dota_heroes/app/core/session/session_cubit.dart';
 import 'package:dota_heroes/app/core/session/session_state.dart';
 import 'package:dota_heroes/app/router/app_router.dart';
-import 'package:dota_heroes/data/data_source/api_client_impl.dart';
 import 'package:dota_heroes/data/data_source/dota_hero_remote_data_source.dart';
 import 'package:dota_heroes/data/repositories/dota_hero_repository_impl.dart';
 import 'package:dota_heroes/domain/repositories/dota_hero_repository.dart';
-import 'package:dota_heroes/presentation/generated/app_localizations.dart';
+import 'package:dota_heroes/generated/app_localizations.dart';
 import 'package:dota_heroes/presentation/style/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,16 +26,10 @@ void main() async {
 
   sessionCubit.loadSession();
 
-  final dio = initializeDio();
-
-  getIt.registerSingleton<ApiClientImpl>(ApiClientImpl(dio));
-
-  getIt.registerSingleton<ApiClient>(getIt<ApiClientImpl>());
-
-  getIt.registerSingleton(DotaHeroRemoteDataSource(getIt<ApiClientImpl>()));
+  final apiClient = initializeApiClient();
 
   getIt.registerLazySingleton<DotaHeroRepository>(
-    () => DotaHeroRepositoryImpl(getIt<DotaHeroRemoteDataSource>()),
+    () => DotaHeroRepositoryImpl(DotaHeroRemoteDataSource(apiClient)),
   );
 
   runApp(

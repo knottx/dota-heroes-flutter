@@ -1,4 +1,4 @@
-import 'package:dota_heroes/presentation/generated/assets.gen.dart';
+import 'package:dota_heroes/generated/assets.gen.dart';
 
 enum DotaHeroStat {
   damage,

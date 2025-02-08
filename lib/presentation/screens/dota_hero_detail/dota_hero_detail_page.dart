@@ -1,7 +1,7 @@
 import 'package:dota_heroes/app/core/session/session_cubit.dart';
 import 'package:dota_heroes/app/core/session/session_state.dart';
 import 'package:dota_heroes/app/router/arguments/dota_hero_detail_page_arguments.dart';
-import 'package:dota_heroes/presentation/generated/assets.gen.dart';
+import 'package:dota_heroes/generated/assets.gen.dart';
 import 'package:dota_heroes/presentation/screens/dota_hero_detail/cubit/dota_hero_detail_screen_cubit.dart';
 import 'package:dota_heroes/presentation/screens/dota_hero_detail/cubit/dota_hero_detail_screen_state.dart';
 import 'package:dota_heroes/presentation/screens/dota_hero_detail/widgets/dota_hero_detail_attribute_section.dart';

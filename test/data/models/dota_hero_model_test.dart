@@ -1,4 +1,4 @@
-import 'package:dota_heroes/app/models/app_error.dart';
+import 'package:dota_heroes/app/core/app_error.dart';
 import 'package:dota_heroes/data/models/dota_hero_model.dart';
 import 'package:dota_heroes/domain/entities/dota_hero_attack_type.dart';
 import 'package:dota_heroes/domain/entities/dota_hero_attribute.dart';
