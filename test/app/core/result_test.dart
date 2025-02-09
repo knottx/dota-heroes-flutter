@@ -1,5 +1,3 @@
-// test/core/result_test.dart
-
 import 'package:dota_heroes/app/core/app_error.dart';
 import 'package:dota_heroes/app/core/result.dart';
 import 'package:flutter_test/flutter_test.dart';

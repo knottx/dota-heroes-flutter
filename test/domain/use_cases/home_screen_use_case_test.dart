@@ -1,5 +1,3 @@
-// test/home_screen_use_case_test.dart
-
 import 'package:dota_heroes/domain/entities/dota_hero.dart';
 import 'package:dota_heroes/domain/repositories/dota_hero_repository.dart';
 import 'package:dota_heroes/domain/use_cases/home_screen_use_case.dart';
