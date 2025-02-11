@@ -33,48 +33,52 @@ class AppError extends Equatable implements Exception {
     }
 
     if (error is DioException) {
-      String? message = error.message;
-
-      switch (error.type) {
-        case DioExceptionType.badResponse:
-          final data = error.response?.data;
-          if (data != null && data is Map<String, dynamic>) {
-            final dataMessage = data['message'];
-            if (dataMessage != null) {
-              message = dataMessage;
-            }
-          }
-          break;
-
-        case DioExceptionType.unknown:
-          if (message?.contains('SocketException') ?? false) {
-            message = 'No Internet';
-          }
-          break;
-        default:
-          break;
-      }
-
-      final requestOptions = error.requestOptions;
-      final statusCode = error.response?.statusCode;
-      final method = requestOptions.method;
-      final uri = requestOptions.uri;
-
-      final debugMessage = [
-        statusCode,
-        method,
-        uri.toString(),
-      ].nonNulls.join(' ');
-
-      return AppError(
-        message: message,
-        statusCode: statusCode,
-        debugMessage: debugMessage,
-      );
+      return _fromDioException(error);
     }
 
     return AppError(
       message: error.toString(),
+    );
+  }
+
+  static AppError _fromDioException(DioException error) {
+    String? message = error.message;
+
+    switch (error.type) {
+      case DioExceptionType.badResponse:
+        final data = error.response?.data;
+        if (data != null && data is Map<String, dynamic>) {
+          final dataMessage = data['message'];
+          if (dataMessage != null) {
+            message = dataMessage;
+          }
+        }
+        break;
+
+      case DioExceptionType.unknown:
+        if (message?.contains('SocketException') ?? false) {
+          message = 'No Internet';
+        }
+        break;
+      default:
+        break;
+    }
+
+    final requestOptions = error.requestOptions;
+    final statusCode = error.response?.statusCode;
+    final method = requestOptions.method;
+    final uri = requestOptions.uri;
+
+    final debugMessage = [
+      statusCode,
+      method,
+      uri.toString(),
+    ].nonNulls.join(' ');
+
+    return AppError(
+      message: message,
+      statusCode: statusCode,
+      debugMessage: debugMessage,
     );
   }
 }
