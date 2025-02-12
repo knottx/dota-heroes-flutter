@@ -5,10 +5,10 @@ part 'extra_data.g.dart';
 
 @JsonSerializable()
 class ExtraData {
-  final DotaHeroDetailScreenArguments? dotaHeroDetailArguments;
+  final DotaHeroDetailScreenArguments? dotaHeroDetailScreenArguments;
 
   const ExtraData({
-    this.dotaHeroDetailArguments,
+    this.dotaHeroDetailScreenArguments,
   });
 
   factory ExtraData.fromJson(Map<String, dynamic> json) =>

@@ -4,30 +4,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('DotaHero', () {
-    test('fromJson and toJson work correctly', () {
-      final json = {
-        'id': 1,
-        'name': 'npc_dota_hero_axe',
-        'localizedName': 'Axe',
-        'primaryAttr': 'str',
-        'baseHealth': 200,
-        'baseStr': 25,
-      };
-
-      final hero = DotaHero.fromJson(json);
-      final convertedJson = hero.toJson();
-
-      expect(hero.id, 1);
-      expect(hero.name, 'npc_dota_hero_axe');
-      expect(hero.localizedName, 'Axe');
-      expect(hero.primaryAttr, DotaHeroAttribute.strength);
-      expect(hero.baseHealth, 200);
-      expect(hero.baseStr, 25);
-      expect(convertedJson, json);
-    });
-
     test('health calculation is correct', () {
-      final hero = DotaHero(
+      final hero = const DotaHero(
         baseHealth: 200,
         baseStr: 25,
       );
@@ -38,7 +16,7 @@ void main() {
     });
 
     test('health regen calculation is correct', () {
-      final hero = DotaHero(
+      final hero = const DotaHero(
         baseHealthRegen: 1.0,
         baseStr: 30,
       );
@@ -49,7 +27,7 @@ void main() {
     });
 
     test('mana calculation is correct', () {
-      final hero = DotaHero(
+      final hero = const DotaHero(
         baseMana: 75,
         baseInt: 20,
       );
@@ -60,7 +38,7 @@ void main() {
     });
 
     test('mana regen calculation is correct', () {
-      final hero = DotaHero(
+      final hero = const DotaHero(
         baseManaRegen: 1.0,
         baseInt: 15,
       );
@@ -71,7 +49,7 @@ void main() {
     });
 
     test('armor calculation is correct', () {
-      final hero = DotaHero(
+      final hero = const DotaHero(
         baseArmor: 2.0,
         baseAgi: 18,
       );
@@ -82,7 +60,7 @@ void main() {
     });
 
     test('attackMin calculation is correct for primaryAttr = strength', () {
-      final hero = DotaHero(
+      final hero = const DotaHero(
         primaryAttr: DotaHeroAttribute.strength,
         baseAttackMin: 20,
         baseStr: 30,
@@ -94,7 +72,7 @@ void main() {
     });
 
     test('attackMax calculation is correct for primaryAttr = agility', () {
-      final hero = DotaHero(
+      final hero = const DotaHero(
         primaryAttr: DotaHeroAttribute.agility,
         baseAttackMax: 30,
         baseAgi: 25,
@@ -106,7 +84,7 @@ void main() {
     });
 
     test('universal hero attackMin calculation is correct', () {
-      final hero = DotaHero(
+      final hero = const DotaHero(
         primaryAttr: DotaHeroAttribute.universal,
         baseAttackMin: 10,
         baseStr: 20,

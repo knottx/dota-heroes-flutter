@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(
                 seedColor: AppColors.primaryBlack,
               ),
-              appBarTheme: AppBarTheme(
+              appBarTheme: const AppBarTheme(
                 backgroundColor: AppColors.primaryBlack,
                 iconTheme: IconThemeData(
                   color: AppColors.primary,
@@ -68,7 +68,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
             routerConfig: AppRouter.router,
-            locale: Locale('en'),
+            locale: const Locale('en'),
             supportedLocales: const [
               Locale('en'),
             ],

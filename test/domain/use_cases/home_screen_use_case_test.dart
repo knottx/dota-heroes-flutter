@@ -19,8 +19,8 @@ void main() {
 
   group('HomeScreenUseCase.getHeroStats', () {
     final heroesList = <DotaHero>[
-      DotaHero(id: 1, name: 'Axe'),
-      DotaHero(id: 2, name: 'Crystal Maiden'),
+      const DotaHero(id: 1, name: 'Axe'),
+      const DotaHero(id: 2, name: 'Crystal Maiden'),
     ];
 
     test('should return Result.success when repository returns data', () async {

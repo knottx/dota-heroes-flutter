@@ -3,11 +3,7 @@ import 'package:dota_heroes/domain/entities/dota_hero_attack_type.dart';
 import 'package:dota_heroes/domain/entities/dota_hero_attribute.dart';
 import 'package:dota_heroes/domain/entities/dota_hero_role.dart';
 import 'package:equatable/equatable.dart';
-import 'package:json_annotation/json_annotation.dart';
 
-part 'dota_hero.g.dart';
-
-@JsonSerializable()
 class DotaHero extends Equatable {
   final int? id;
   final String? name;
@@ -115,11 +111,6 @@ class DotaHero extends Equatable {
         dayVision,
         nightVision,
       ];
-
-  factory DotaHero.fromJson(Map<String, dynamic> json) =>
-      _$DotaHeroFromJson(json);
-
-  Map<String, dynamic> toJson() => _$DotaHeroToJson(this);
 
   String potraitImageUrl() {
     final path = img?.replaceAll(

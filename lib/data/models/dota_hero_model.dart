@@ -8,7 +8,6 @@ part 'dota_hero_model.g.dart';
 
 @JsonSerializable(
   fieldRename: FieldRename.snake,
-  createToJson: false,
 )
 class DotaHeroModel {
   final int? id;
@@ -87,4 +86,6 @@ class DotaHeroModel {
   factory DotaHeroModel.fromJson(Map<String, dynamic> json) {
     return Codable.decode(_$DotaHeroModelFromJson, json);
   }
+
+  Map<String, dynamic> toJson() => _$DotaHeroModelToJson(this);
 }

@@ -1,7 +1,9 @@
 import 'package:dota_heroes/app/core/session/session_cubit.dart';
 import 'package:dota_heroes/app/core/session/session_state.dart';
+import 'package:dota_heroes/app/router/app_router.dart';
 import 'package:dota_heroes/app/router/arguments/dota_hero_detail_page_arguments.dart';
 import 'package:dota_heroes/app/router/extra_data.dart';
+import 'package:dota_heroes/data/mapper/dota_hero_mapper.dart';
 import 'package:dota_heroes/domain/entities/dota_hero.dart';
 import 'package:dota_heroes/domain/entities/sort_type.dart';
 import 'package:dota_heroes/domain/repositories/dota_hero_repository.dart';
@@ -167,7 +169,7 @@ class _HomeViewState extends State<HomeView> {
             controller: cubit.scrollController,
             child: GridView.builder(
               keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-              padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
+              padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
               controller: cubit.scrollController,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
@@ -197,10 +199,10 @@ class _HomeViewState extends State<HomeView> {
 
   void _onSelectedDotaHero(DotaHero dotaHero) {
     context.push(
-      '/dota-hero-detail',
+      AppRoute.dotaHeroDetail,
       extra: ExtraData(
-        dotaHeroDetailArguments: DotaHeroDetailScreenArguments(
-          dotaHero: dotaHero,
+        dotaHeroDetailScreenArguments: DotaHeroDetailScreenArguments(
+          dotaHeroModel: DotaHeroMapper.toModel(dotaHero),
         ),
       ),
     );

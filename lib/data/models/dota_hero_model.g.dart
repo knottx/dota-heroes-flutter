@@ -50,6 +50,48 @@ DotaHeroModel _$DotaHeroModelFromJson(Map<String, dynamic> json) =>
       nightVision: json['night_vision'] as num?,
     );
 
+Map<String, dynamic> _$DotaHeroModelToJson(DotaHeroModel instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.localizedName case final value?) 'localized_name': value,
+      if (_$DotaHeroAttributeEnumMap[instance.primaryAttr] case final value?)
+        'primary_attr': value,
+      if (_$DotaHeroAttackTypeEnumMap[instance.attackType] case final value?)
+        'attack_type': value,
+      if (instance.roles?.map((e) => _$DotaHeroRoleEnumMap[e]).toList()
+          case final value?)
+        'roles': value,
+      if (instance.img case final value?) 'img': value,
+      if (instance.icon case final value?) 'icon': value,
+      if (instance.baseHealth case final value?) 'base_health': value,
+      if (instance.baseHealthRegen case final value?)
+        'base_health_regen': value,
+      if (instance.baseMana case final value?) 'base_mana': value,
+      if (instance.baseManaRegen case final value?) 'base_mana_regen': value,
+      if (instance.baseArmor case final value?) 'base_armor': value,
+      if (instance.baseMr case final value?) 'base_mr': value,
+      if (instance.baseAttackMin case final value?) 'base_attack_min': value,
+      if (instance.baseAttackMax case final value?) 'base_attack_max': value,
+      if (instance.baseStr case final value?) 'base_str': value,
+      if (instance.baseAgi case final value?) 'base_agi': value,
+      if (instance.baseInt case final value?) 'base_int': value,
+      if (instance.strGain case final value?) 'str_gain': value,
+      if (instance.agiGain case final value?) 'agi_gain': value,
+      if (instance.intGain case final value?) 'int_gain': value,
+      if (instance.attackRange case final value?) 'attack_range': value,
+      if (instance.projectileSpeed case final value?) 'projectile_speed': value,
+      if (instance.attackRate case final value?) 'attack_rate': value,
+      if (instance.baseAttackTime case final value?) 'base_attack_time': value,
+      if (instance.attackPoint case final value?) 'attack_point': value,
+      if (instance.moveSpeed case final value?) 'move_speed': value,
+      if (instance.turnRate case final value?) 'turn_rate': value,
+      if (instance.cmEnabled case final value?) 'cm_enabled': value,
+      if (instance.legs case final value?) 'legs': value,
+      if (instance.dayVision case final value?) 'day_vision': value,
+      if (instance.nightVision case final value?) 'night_vision': value,
+    };
+
 const _$DotaHeroAttributeEnumMap = {
   DotaHeroAttribute.strength: 'str',
   DotaHeroAttribute.agility: 'agi',

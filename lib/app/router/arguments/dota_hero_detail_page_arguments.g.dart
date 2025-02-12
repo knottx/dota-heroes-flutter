@@ -9,13 +9,15 @@ part of 'dota_hero_detail_page_arguments.dart';
 DotaHeroDetailScreenArguments _$DotaHeroDetailScreenArgumentsFromJson(
         Map<String, dynamic> json) =>
     DotaHeroDetailScreenArguments(
-      dotaHero: json['dotaHero'] == null
+      dotaHeroModel: json['dotaHeroModel'] == null
           ? null
-          : DotaHero.fromJson(json['dotaHero'] as Map<String, dynamic>),
+          : DotaHeroModel.fromJson(
+              json['dotaHeroModel'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$DotaHeroDetailScreenArgumentsToJson(
         DotaHeroDetailScreenArguments instance) =>
     <String, dynamic>{
-      if (instance.dotaHero?.toJson() case final value?) 'dotaHero': value,
+      if (instance.dotaHeroModel?.toJson() case final value?)
+        'dotaHeroModel': value,
     };

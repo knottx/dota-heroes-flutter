@@ -1,24 +1,24 @@
 import 'dart:convert';
 
-import 'package:dota_heroes/app/utils/logger.dart';
 import 'package:dota_heroes/app/router/extra_data.dart';
+import 'package:dota_heroes/app/utils/logger.dart';
 
 class ExtraCodec extends Codec<ExtraData?, String?> {
   const ExtraCodec();
 
   @override
   Converter<String?, ExtraData?> get decoder {
-    return const ExtraDecoder();
+    return const _ExtraDecoder();
   }
 
   @override
   Converter<ExtraData?, String?> get encoder {
-    return const ExtraEncoder();
+    return const _ExtraEncoder();
   }
 }
 
-class ExtraDecoder extends Converter<String?, ExtraData?> {
-  const ExtraDecoder();
+class _ExtraDecoder extends Converter<String?, ExtraData?> {
+  const _ExtraDecoder();
 
   @override
   ExtraData? convert(String? input) {
@@ -32,8 +32,9 @@ class ExtraDecoder extends Converter<String?, ExtraData?> {
   }
 }
 
-class ExtraEncoder extends Converter<ExtraData?, String?> {
-  const ExtraEncoder();
+class _ExtraEncoder extends Converter<ExtraData?, String?> {
+  const _ExtraEncoder();
+
   @override
   String? convert(ExtraData? input) {
     if (input == null) return null;

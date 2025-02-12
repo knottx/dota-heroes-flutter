@@ -14,8 +14,8 @@ https://user-images.githubusercontent.com/7570105/235453057-3acef624-5c0e-436d-8
 
 Ensure you have the following installed:
 
-- Flutter SDK (>= 3.24.5)
-- Dart (>= 3.5.4)
+- Flutter SDK (>= 3.27.3)
+- Dart (>= 3.6.1)
 
 ### Installation
 

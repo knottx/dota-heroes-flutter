@@ -20,14 +20,14 @@ void main() {
 
   group('getHeroStats', () {
     final tHeroModels = [
-      DotaHero(
+      const DotaHero(
         id: 1,
         name: 'npc_dota_hero_axe',
         localizedName: 'Axe',
         primaryAttr: DotaHeroAttribute.strength,
         baseHealth: 200,
       ),
-      DotaHero(
+      const DotaHero(
         id: 2,
         name: 'npc_dota_hero_bane',
         localizedName: 'Bane',
