@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:dota_heroes/app/constants/app_constants.dart';
-import 'package:dota_heroes/app/core/api/api_client.dart';
-import 'package:dota_heroes/app/core/api/curl_logger.dart';
-import 'package:dota_heroes/data/data_source/api_client_impl.dart';
+import 'package:dota_heroes/common/app_constants.dart';
+import 'package:dota_heroes/common/curl_logger.dart';
+import 'package:dota_heroes/data/core/api_client_impl.dart';
+import 'package:dota_heroes/domain/core/api_client.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 

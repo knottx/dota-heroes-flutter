@@ -1,4 +1,4 @@
-import 'package:dota_heroes/app/utils/codable.dart';
+import 'package:dota_heroes/common/codable.dart';
 import 'package:dota_heroes/data/models/dota_hero_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 

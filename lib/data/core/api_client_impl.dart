@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:dota_heroes/app/core/api/api_client.dart';
+import 'package:dota_heroes/domain/core/api_client.dart';
 
 class ApiClientImpl implements ApiClient {
   final Dio _dio;

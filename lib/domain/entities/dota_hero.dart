@@ -1,4 +1,4 @@
-import 'package:dota_heroes/app/constants/app_constants.dart';
+import 'package:dota_heroes/common/app_constants.dart';
 import 'package:dota_heroes/domain/entities/dota_hero_attack_type.dart';
 import 'package:dota_heroes/domain/entities/dota_hero_attribute.dart';
 import 'package:dota_heroes/domain/entities/dota_hero_role.dart';

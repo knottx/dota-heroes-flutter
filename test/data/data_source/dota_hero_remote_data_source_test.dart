@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:dota_heroes/app/core/api/api_client.dart';
-import 'package:dota_heroes/data/data_source/dota_hero_remote_data_source.dart';
+import 'package:dota_heroes/domain/core/api_client.dart';
+import 'package:dota_heroes/data/data_sources/dota_hero_remote_data_source.dart';
 import 'package:dota_heroes/domain/entities/dota_hero.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';

@@ -1,10 +1,10 @@
 // ignore_for_file: always_use_package_imports
 
-import 'package:dota_heroes/app/config/api_client_initializer.dart';
+import 'package:dota_heroes/app/initializers/api_client_initializer.dart';
 import 'package:dota_heroes/app/core/session/session_cubit.dart';
 import 'package:dota_heroes/app/core/session/session_state.dart';
 import 'package:dota_heroes/app/router/app_router.dart';
-import 'package:dota_heroes/data/data_source/dota_hero_remote_data_source.dart';
+import 'package:dota_heroes/data/data_sources/dota_hero_remote_data_source.dart';
 import 'package:dota_heroes/data/repositories/dota_hero_repository_impl.dart';
 import 'package:dota_heroes/domain/repositories/dota_hero_repository.dart';
 import 'package:dota_heroes/generated/app_localizations.dart';

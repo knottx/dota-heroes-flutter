@@ -1,4 +1,4 @@
-import 'package:dota_heroes/app/core/result.dart';
+import 'package:dota_heroes/domain/core/result.dart';
 import 'package:dota_heroes/domain/entities/dota_hero.dart';
 import 'package:dota_heroes/domain/repositories/dota_hero_repository.dart';
 

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dota_heroes/app/router/extra_data.dart';
-import 'package:dota_heroes/app/utils/logger.dart';
+import 'package:dota_heroes/common/logger.dart';
 
 class ExtraCodec extends Codec<ExtraData?, String?> {
   const ExtraCodec();

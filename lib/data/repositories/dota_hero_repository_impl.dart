@@ -1,4 +1,4 @@
-import 'package:dota_heroes/data/data_source/dota_hero_remote_data_source.dart';
+import 'package:dota_heroes/data/data_sources/dota_hero_remote_data_source.dart';
 import 'package:dota_heroes/domain/entities/dota_hero.dart';
 import 'package:dota_heroes/domain/repositories/dota_hero_repository.dart';
 

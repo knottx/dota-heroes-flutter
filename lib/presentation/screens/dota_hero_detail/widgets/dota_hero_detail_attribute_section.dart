@@ -1,7 +1,7 @@
 import 'package:dota_heroes/domain/entities/dota_hero.dart';
 import 'package:dota_heroes/domain/entities/dota_hero_attribute.dart';
 import 'package:dota_heroes/presentation/style/app_colors.dart';
-import 'package:dota_heroes/presentation/widgets/image_from_network.dart';
+import 'package:dota_heroes/presentation/global_widgets/image_from_network.dart';
 import 'package:flutter/material.dart';
 
 class DotaHeroDetailAttributeSection extends StatelessWidget {

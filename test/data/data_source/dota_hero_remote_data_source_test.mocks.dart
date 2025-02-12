@@ -6,7 +6,7 @@
 import 'dart:async' as _i4;
 
 import 'package:dio/dio.dart' as _i2;
-import 'package:dota_heroes/app/core/api/api_client.dart' as _i3;
+import 'package:dota_heroes/domain/core/api_client.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -25,7 +25,7 @@ import 'package:mockito/mockito.dart' as _i1;
 
 class _FakeResponse_0<T> extends _i1.SmartFake implements _i2.Response<T> {
   _FakeResponse_0(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
+      : super(parent, parentInvocation);
 }
 
 /// A class which mocks [ApiClient].
@@ -45,6 +45,19 @@ class MockApiClient extends _i1.Mock implements _i3.ApiClient {
     _i2.ProgressCallback? onReceiveProgress,
   }) =>
       (super.noSuchMethod(
+        Invocation.method(
+          #get,
+          [path],
+          {
+            #queryParameters: queryParameters,
+            #options: options,
+            #cancelToken: cancelToken,
+            #onReceiveProgress: onReceiveProgress,
+          },
+        ),
+        returnValue: _i4.Future<_i2.Response<dynamic>>.value(
+          _FakeResponse_0<dynamic>(
+            this,
             Invocation.method(
               #get,
               [path],
@@ -55,23 +68,9 @@ class MockApiClient extends _i1.Mock implements _i3.ApiClient {
                 #onReceiveProgress: onReceiveProgress,
               },
             ),
-            returnValue: _i4.Future<_i2.Response<dynamic>>.value(
-              _FakeResponse_0<dynamic>(
-                this,
-                Invocation.method(
-                  #get,
-                  [path],
-                  {
-                    #queryParameters: queryParameters,
-                    #options: options,
-                    #cancelToken: cancelToken,
-                    #onReceiveProgress: onReceiveProgress,
-                  },
-                ),
-              ),
-            ),
-          )
-          as _i4.Future<_i2.Response<dynamic>>);
+          ),
+        ),
+      ) as _i4.Future<_i2.Response<dynamic>>);
 
   @override
   _i4.Future<_i2.Response<dynamic>> post(
@@ -84,6 +83,21 @@ class MockApiClient extends _i1.Mock implements _i3.ApiClient {
     _i2.ProgressCallback? onReceiveProgress,
   }) =>
       (super.noSuchMethod(
+        Invocation.method(
+          #post,
+          [path],
+          {
+            #data: data,
+            #queryParameters: queryParameters,
+            #options: options,
+            #cancelToken: cancelToken,
+            #onSendProgress: onSendProgress,
+            #onReceiveProgress: onReceiveProgress,
+          },
+        ),
+        returnValue: _i4.Future<_i2.Response<dynamic>>.value(
+          _FakeResponse_0<dynamic>(
+            this,
             Invocation.method(
               #post,
               [path],
@@ -96,25 +110,9 @@ class MockApiClient extends _i1.Mock implements _i3.ApiClient {
                 #onReceiveProgress: onReceiveProgress,
               },
             ),
-            returnValue: _i4.Future<_i2.Response<dynamic>>.value(
-              _FakeResponse_0<dynamic>(
-                this,
-                Invocation.method(
-                  #post,
-                  [path],
-                  {
-                    #data: data,
-                    #queryParameters: queryParameters,
-                    #options: options,
-                    #cancelToken: cancelToken,
-                    #onSendProgress: onSendProgress,
-                    #onReceiveProgress: onReceiveProgress,
-                  },
-                ),
-              ),
-            ),
-          )
-          as _i4.Future<_i2.Response<dynamic>>);
+          ),
+        ),
+      ) as _i4.Future<_i2.Response<dynamic>>);
 
   @override
   _i4.Future<_i2.Response<dynamic>> put(
@@ -127,6 +125,21 @@ class MockApiClient extends _i1.Mock implements _i3.ApiClient {
     _i2.ProgressCallback? onReceiveProgress,
   }) =>
       (super.noSuchMethod(
+        Invocation.method(
+          #put,
+          [path],
+          {
+            #data: data,
+            #queryParameters: queryParameters,
+            #options: options,
+            #cancelToken: cancelToken,
+            #onSendProgress: onSendProgress,
+            #onReceiveProgress: onReceiveProgress,
+          },
+        ),
+        returnValue: _i4.Future<_i2.Response<dynamic>>.value(
+          _FakeResponse_0<dynamic>(
+            this,
             Invocation.method(
               #put,
               [path],
@@ -139,25 +152,9 @@ class MockApiClient extends _i1.Mock implements _i3.ApiClient {
                 #onReceiveProgress: onReceiveProgress,
               },
             ),
-            returnValue: _i4.Future<_i2.Response<dynamic>>.value(
-              _FakeResponse_0<dynamic>(
-                this,
-                Invocation.method(
-                  #put,
-                  [path],
-                  {
-                    #data: data,
-                    #queryParameters: queryParameters,
-                    #options: options,
-                    #cancelToken: cancelToken,
-                    #onSendProgress: onSendProgress,
-                    #onReceiveProgress: onReceiveProgress,
-                  },
-                ),
-              ),
-            ),
-          )
-          as _i4.Future<_i2.Response<dynamic>>);
+          ),
+        ),
+      ) as _i4.Future<_i2.Response<dynamic>>);
 
   @override
   _i4.Future<_i2.Response<dynamic>> delete(
@@ -168,6 +165,19 @@ class MockApiClient extends _i1.Mock implements _i3.ApiClient {
     _i2.CancelToken? cancelToken,
   }) =>
       (super.noSuchMethod(
+        Invocation.method(
+          #delete,
+          [path],
+          {
+            #data: data,
+            #queryParameters: queryParameters,
+            #options: options,
+            #cancelToken: cancelToken,
+          },
+        ),
+        returnValue: _i4.Future<_i2.Response<dynamic>>.value(
+          _FakeResponse_0<dynamic>(
+            this,
             Invocation.method(
               #delete,
               [path],
@@ -178,21 +188,7 @@ class MockApiClient extends _i1.Mock implements _i3.ApiClient {
                 #cancelToken: cancelToken,
               },
             ),
-            returnValue: _i4.Future<_i2.Response<dynamic>>.value(
-              _FakeResponse_0<dynamic>(
-                this,
-                Invocation.method(
-                  #delete,
-                  [path],
-                  {
-                    #data: data,
-                    #queryParameters: queryParameters,
-                    #options: options,
-                    #cancelToken: cancelToken,
-                  },
-                ),
-              ),
-            ),
-          )
-          as _i4.Future<_i2.Response<dynamic>>);
+          ),
+        ),
+      ) as _i4.Future<_i2.Response<dynamic>>);
 }

@@ -1,5 +1,5 @@
-import 'package:dota_heroes/app/core/api/api_client.dart';
-import 'package:dota_heroes/data/mapper/dota_hero_mapper.dart';
+import 'package:dota_heroes/domain/core/api_client.dart';
+import 'package:dota_heroes/data/mappers/dota_hero_mapper.dart';
 import 'package:dota_heroes/data/models/dota_hero_model.dart';
 import 'package:dota_heroes/domain/entities/dota_hero.dart';
 
