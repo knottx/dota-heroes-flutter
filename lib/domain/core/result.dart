@@ -7,8 +7,8 @@ class Result<T> {
   Result.success(this.data) : error = null;
   Result.failure(this.error) : data = null;
 
-  bool get isSuccess => error == null;
-  bool get isFailure => error != null;
+  bool isSuccess() => error == null;
+  bool isFailure() => error != null;
 
   void when({
     required void Function(T data) success,
@@ -28,8 +28,8 @@ class ResultVoid {
   ResultVoid.success() : error = null;
   ResultVoid.failure(this.error);
 
-  bool get isSuccess => error == null;
-  bool get isFailure => error != null;
+  bool isSuccess() => error == null;
+  bool isFailure() => error != null;
 
   void when({
     required void Function() success,

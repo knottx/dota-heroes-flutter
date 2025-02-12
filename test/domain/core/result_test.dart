@@ -8,8 +8,8 @@ void main() {
         () {
       final result = Result<int>.success(42);
 
-      expect(result.isSuccess, isTrue);
-      expect(result.isFailure, isFalse);
+      expect(result.isSuccess(), isTrue);
+      expect(result.isFailure(), isFalse);
 
       var callbackCalled = false;
       var callbackData = 0;
@@ -32,8 +32,8 @@ void main() {
       final exception = Exception('Test error');
       final result = Result<int>.failure(exception);
 
-      expect(result.isSuccess, isFalse);
-      expect(result.isFailure, isTrue);
+      expect(result.isSuccess(), isFalse);
+      expect(result.isFailure(), isTrue);
 
       var callbackCalled = false;
       AppError? receivedError;
@@ -57,8 +57,8 @@ void main() {
     test('ResultVoid.success returns success and calls success callback', () {
       final result = ResultVoid.success();
 
-      expect(result.isSuccess, isTrue);
-      expect(result.isFailure, isFalse);
+      expect(result.isSuccess(), isTrue);
+      expect(result.isFailure(), isFalse);
 
       var callbackCalled = false;
       result.when(
@@ -79,8 +79,8 @@ void main() {
       final exception = Exception('Void error');
       final result = ResultVoid.failure(exception);
 
-      expect(result.isSuccess, isFalse);
-      expect(result.isFailure, isTrue);
+      expect(result.isSuccess(), isFalse);
+      expect(result.isFailure(), isTrue);
 
       var callbackCalled = false;
       AppError? receivedError;

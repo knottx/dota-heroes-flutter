@@ -28,7 +28,7 @@ void main() {
 
       final result = await useCase.getHeroStats();
 
-      expect(result.isSuccess, isTrue);
+      expect(result.isSuccess(), isTrue);
       expect(result.data, equals(heroesList));
       verify(mockRepository.getHeroStats()).called(1);
       verifyNoMoreInteractions(mockRepository);
@@ -41,7 +41,7 @@ void main() {
 
       final result = await useCase.getHeroStats();
 
-      expect(result.isFailure, isTrue);
+      expect(result.isFailure(), isTrue);
       expect(result.error, equals(exception));
       verify(mockRepository.getHeroStats()).called(1);
       verifyNoMoreInteractions(mockRepository);
