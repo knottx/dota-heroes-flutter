@@ -5,7 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:dota_heroes/data/data_sources/dota_hero_remote_data_source.dart'
+import 'package:dota_heroes/data/data_sources/remote_data_sources/dota_hero_remote_data_source_impl.dart'
     as _i2;
 import 'package:dota_heroes/domain/entities/dota_hero.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
@@ -28,7 +28,7 @@ import 'package:mockito/mockito.dart' as _i1;
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockDotaHeroRemoteDataSource extends _i1.Mock
-    implements _i2.DotaHeroRemoteDataSource {
+    implements _i2.DotaHeroRemoteDataSourceImpl {
   MockDotaHeroRemoteDataSource() {
     _i1.throwOnMissingStub(this);
   }

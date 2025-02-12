@@ -117,7 +117,10 @@ class DotaHero extends Equatable {
       '/apps/dota2/images/dota_react/heroes/',
       '/apps/dota2/videos/dota_react/heroes/renders/',
     );
-    return '${AppConstants.imageBaseUrl}${path ?? ''}';
+    return [
+      AppConstants.imageBaseUrl,
+      path,
+    ].nonNulls.join();
   }
 
   String potraitVideoUrl() {
@@ -153,13 +156,13 @@ class DotaHero extends Equatable {
 
   num attackMin() {
     switch (primaryAttr) {
-      case DotaHeroAttribute.strength:
+      case DotaHeroAttribute.str:
         return (baseAttackMin ?? 0) + (baseStr ?? 0);
-      case DotaHeroAttribute.agility:
+      case DotaHeroAttribute.agi:
         return (baseAttackMin ?? 0) + (baseAgi ?? 0);
-      case DotaHeroAttribute.intelligence:
+      case DotaHeroAttribute.int:
         return (baseAttackMin ?? 0) + (baseInt ?? 0);
-      case DotaHeroAttribute.universal:
+      case DotaHeroAttribute.all:
         return (baseAttackMin ?? 0) +
             ((baseStr ?? 0) * 0.6) +
             ((baseAgi ?? 0) * 0.6) +
@@ -171,13 +174,13 @@ class DotaHero extends Equatable {
 
   num attackMax() {
     switch (primaryAttr) {
-      case DotaHeroAttribute.strength:
+      case DotaHeroAttribute.str:
         return (baseAttackMax ?? 0) + (baseStr ?? 0);
-      case DotaHeroAttribute.agility:
+      case DotaHeroAttribute.agi:
         return (baseAttackMax ?? 0) + (baseAgi ?? 0);
-      case DotaHeroAttribute.intelligence:
+      case DotaHeroAttribute.int:
         return (baseAttackMax ?? 0) + (baseInt ?? 0);
-      case DotaHeroAttribute.universal:
+      case DotaHeroAttribute.all:
         return (baseAttackMax ?? 0) +
             ((baseStr ?? 0) * 0.6) +
             ((baseAgi ?? 0) * 0.6) +

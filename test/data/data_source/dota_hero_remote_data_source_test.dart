@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:dota_heroes/data/data_sources/remote_data_sources/dota_hero_remote_data_source_impl.dart';
 import 'package:dota_heroes/domain/core/api_client.dart';
-import 'package:dota_heroes/data/data_sources/dota_hero_remote_data_source.dart';
 import 'package:dota_heroes/domain/entities/dota_hero.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
@@ -11,11 +11,11 @@ import 'dota_hero_remote_data_source_test.mocks.dart';
 @GenerateMocks([ApiClient])
 void main() {
   late MockApiClient mockApiClient;
-  late DotaHeroRemoteDataSource dataSource;
+  late DotaHeroRemoteDataSourceImpl dataSource;
 
   setUp(() {
     mockApiClient = MockApiClient();
-    dataSource = DotaHeroRemoteDataSource(mockApiClient);
+    dataSource = DotaHeroRemoteDataSourceImpl(mockApiClient);
   });
 
   group('getHeroStats', () {

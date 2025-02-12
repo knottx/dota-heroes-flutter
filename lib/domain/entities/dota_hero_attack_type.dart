@@ -13,9 +13,9 @@ enum DotaHeroAttackType {
   String title(BuildContext context) {
     switch (this) {
       case DotaHeroAttackType.melee:
-        return AppLocalizations.of(context).attackTypeMelee;
+        return AppLocalizations.of(context).attack_type_melee;
       case DotaHeroAttackType.ranged:
-        return AppLocalizations.of(context).attackTypeRanged;
+        return AppLocalizations.of(context).attack_type_ranged;
     }
   }
 

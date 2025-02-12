@@ -22,7 +22,7 @@ class AppAlert {
       errorMessage = error.message;
     }
 
-    errorTitle ??= AppLocalizations.of(context).errorTitle;
+    errorTitle ??= AppLocalizations.of(context).error_title;
     errorMessage ??= error.toString();
 
     AppAlert.dialog(
@@ -49,7 +49,7 @@ class AppAlert {
       alertActions: [
         AppAlertAction(
           isDefaultAction: true,
-          title: AppLocalizations.of(context).commonOk,
+          title: AppLocalizations.of(context).common_ok,
           onAction: onAction,
         ),
       ],

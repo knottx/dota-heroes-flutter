@@ -44,7 +44,7 @@ class DotaHeroDetailHeaderSection extends StatelessWidget {
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      primaryAttr.titlex(context),
+                      primaryAttr.title(context),
                       style: const TextStyle(
                         color: AppColors.primary,
                         fontSize: 18,

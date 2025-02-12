@@ -26,23 +26,23 @@ enum DotaHeroRole {
   String title(BuildContext context) {
     switch (this) {
       case DotaHeroRole.carry:
-        return AppLocalizations.of(context).roleCarry;
+        return AppLocalizations.of(context).role_carry;
       case DotaHeroRole.support:
-        return AppLocalizations.of(context).roleSupport;
+        return AppLocalizations.of(context).role_support;
       case DotaHeroRole.nuker:
-        return AppLocalizations.of(context).roleNuker;
+        return AppLocalizations.of(context).role_nuker;
       case DotaHeroRole.disabler:
-        return AppLocalizations.of(context).roleDisabler;
+        return AppLocalizations.of(context).role_disabler;
       case DotaHeroRole.jungler:
-        return AppLocalizations.of(context).roleJungler;
+        return AppLocalizations.of(context).role_jungler;
       case DotaHeroRole.durable:
-        return AppLocalizations.of(context).roleDurable;
+        return AppLocalizations.of(context).role_durable;
       case DotaHeroRole.escape:
-        return AppLocalizations.of(context).roleEscape;
+        return AppLocalizations.of(context).role_escape;
       case DotaHeroRole.pusher:
-        return AppLocalizations.of(context).rolePusher;
+        return AppLocalizations.of(context).role_pusher;
       case DotaHeroRole.initiator:
-        return AppLocalizations.of(context).roleInitiator;
+        return AppLocalizations.of(context).role_initiator;
     }
   }
 }

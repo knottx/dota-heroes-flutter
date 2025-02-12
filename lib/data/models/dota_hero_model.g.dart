@@ -93,10 +93,10 @@ Map<String, dynamic> _$DotaHeroModelToJson(DotaHeroModel instance) =>
     };
 
 const _$DotaHeroAttributeEnumMap = {
-  DotaHeroAttribute.strength: 'str',
-  DotaHeroAttribute.agility: 'agi',
-  DotaHeroAttribute.intelligence: 'int',
-  DotaHeroAttribute.universal: 'all',
+  DotaHeroAttribute.str: 'str',
+  DotaHeroAttribute.agi: 'agi',
+  DotaHeroAttribute.int: 'int',
+  DotaHeroAttribute.all: 'all',
 };
 
 const _$DotaHeroAttackTypeEnumMap = {

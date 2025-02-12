@@ -61,7 +61,7 @@ void main() {
 
     test('attackMin calculation is correct for primaryAttr = strength', () {
       final hero = const DotaHero(
-        primaryAttr: DotaHeroAttribute.strength,
+        primaryAttr: DotaHeroAttribute.str,
         baseAttackMin: 20,
         baseStr: 30,
       );
@@ -73,7 +73,7 @@ void main() {
 
     test('attackMax calculation is correct for primaryAttr = agility', () {
       final hero = const DotaHero(
-        primaryAttr: DotaHeroAttribute.agility,
+        primaryAttr: DotaHeroAttribute.agi,
         baseAttackMax: 30,
         baseAgi: 25,
       );
@@ -85,7 +85,7 @@ void main() {
 
     test('universal hero attackMin calculation is correct', () {
       final hero = const DotaHero(
-        primaryAttr: DotaHeroAttribute.universal,
+        primaryAttr: DotaHeroAttribute.all,
         baseAttackMin: 10,
         baseStr: 20,
         baseAgi: 15,

@@ -49,7 +49,7 @@ void main() {
       expect(model.id, 1);
       expect(model.name, 'npc_dota_hero_axe');
       expect(model.localizedName, 'Axe');
-      expect(model.primaryAttr, DotaHeroAttribute.strength);
+      expect(model.primaryAttr, DotaHeroAttribute.str);
       expect(model.attackType, DotaHeroAttackType.melee);
       expect(model.roles, [DotaHeroRole.initiator, DotaHeroRole.durable]);
       expect(model.img, '/apps/dota2/images/heroes/axe_full.png');

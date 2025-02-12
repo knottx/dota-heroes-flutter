@@ -1,4 +1,4 @@
-import 'package:dota_heroes/data/data_sources/dota_hero_remote_data_source.dart';
+import 'package:dota_heroes/data/data_sources/remote_data_sources/dota_hero_remote_data_source_impl.dart';
 import 'package:dota_heroes/data/repositories/dota_hero_repository_impl.dart';
 import 'package:dota_heroes/domain/entities/dota_hero.dart';
 import 'package:dota_heroes/domain/entities/dota_hero_attribute.dart';
@@ -8,7 +8,7 @@ import 'package:mockito/mockito.dart';
 
 import 'dota_hero_repository_impl_test.mocks.dart';
 
-@GenerateMocks([DotaHeroRemoteDataSource])
+@GenerateMocks([DotaHeroRemoteDataSourceImpl])
 void main() {
   late MockDotaHeroRemoteDataSource mockRemoteDataSource;
   late DotaHeroRepositoryImpl repository;
@@ -24,14 +24,14 @@ void main() {
         id: 1,
         name: 'npc_dota_hero_axe',
         localizedName: 'Axe',
-        primaryAttr: DotaHeroAttribute.strength,
+        primaryAttr: DotaHeroAttribute.str,
         baseHealth: 200,
       ),
       const DotaHero(
         id: 2,
         name: 'npc_dota_hero_bane',
         localizedName: 'Bane',
-        primaryAttr: DotaHeroAttribute.intelligence,
+        primaryAttr: DotaHeroAttribute.int,
         baseHealth: 180,
       ),
     ];

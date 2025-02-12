@@ -64,17 +64,17 @@ class DotaHeroDetailAttributeSection extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   _attributeItem(
-                    attribute: DotaHeroAttribute.strength,
+                    attribute: DotaHeroAttribute.str,
                     base: dotaHero?.baseStr ?? 0,
                     gain: dotaHero?.strGain ?? 0,
                   ),
                   _attributeItem(
-                    attribute: DotaHeroAttribute.agility,
+                    attribute: DotaHeroAttribute.agi,
                     base: dotaHero?.baseAgi ?? 0,
                     gain: dotaHero?.agiGain ?? 0,
                   ),
                   _attributeItem(
-                    attribute: DotaHeroAttribute.intelligence,
+                    attribute: DotaHeroAttribute.int,
                     base: dotaHero?.baseInt ?? 0,
                     gain: dotaHero?.intGain ?? 0,
                   ),

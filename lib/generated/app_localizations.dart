@@ -93,113 +93,113 @@ abstract class AppLocalizations {
     Locale('en')
   ];
 
-  /// No description provided for @commonCancel.
+  /// No description provided for @common_cancel.
   ///
   /// In en, this message translates to:
   /// **'Cancel'**
-  String get commonCancel;
+  String get common_cancel;
 
-  /// No description provided for @commonOk.
+  /// No description provided for @common_ok.
   ///
   /// In en, this message translates to:
   /// **'OK'**
-  String get commonOk;
+  String get common_ok;
 
-  /// No description provided for @errorTitle.
+  /// No description provided for @error_title.
   ///
   /// In en, this message translates to:
   /// **'Sorry'**
-  String get errorTitle;
+  String get error_title;
 
-  /// No description provided for @attackTypeMelee.
+  /// No description provided for @attack_type_melee.
   ///
   /// In en, this message translates to:
   /// **'Melee'**
-  String get attackTypeMelee;
+  String get attack_type_melee;
 
-  /// No description provided for @attackTypeRanged.
+  /// No description provided for @attack_type_ranged.
   ///
   /// In en, this message translates to:
   /// **'Ranged'**
-  String get attackTypeRanged;
+  String get attack_type_ranged;
 
-  /// No description provided for @attributeStr.
+  /// No description provided for @attribute_str.
   ///
   /// In en, this message translates to:
   /// **'Strength'**
-  String get attributeStr;
+  String get attribute_str;
 
-  /// No description provided for @attributeAgi.
+  /// No description provided for @attribute_agi.
   ///
   /// In en, this message translates to:
   /// **'Agility'**
-  String get attributeAgi;
+  String get attribute_agi;
 
-  /// No description provided for @attributeInt.
+  /// No description provided for @attribute_int.
   ///
   /// In en, this message translates to:
   /// **'Intelligence'**
-  String get attributeInt;
+  String get attribute_int;
 
-  /// No description provided for @attributeUniversal.
+  /// No description provided for @attribute_universal.
   ///
   /// In en, this message translates to:
   /// **'universal'**
-  String get attributeUniversal;
+  String get attribute_universal;
 
-  /// No description provided for @roleCarry.
+  /// No description provided for @role_carry.
   ///
   /// In en, this message translates to:
   /// **'Carry'**
-  String get roleCarry;
+  String get role_carry;
 
-  /// No description provided for @roleSupport.
+  /// No description provided for @role_support.
   ///
   /// In en, this message translates to:
   /// **'Support'**
-  String get roleSupport;
+  String get role_support;
 
-  /// No description provided for @roleNuker.
+  /// No description provided for @role_nuker.
   ///
   /// In en, this message translates to:
   /// **'Nuker'**
-  String get roleNuker;
+  String get role_nuker;
 
-  /// No description provided for @roleDisabler.
+  /// No description provided for @role_disabler.
   ///
   /// In en, this message translates to:
   /// **'Disabler'**
-  String get roleDisabler;
+  String get role_disabler;
 
-  /// No description provided for @roleJungler.
+  /// No description provided for @role_jungler.
   ///
   /// In en, this message translates to:
   /// **'Jungler'**
-  String get roleJungler;
+  String get role_jungler;
 
-  /// No description provided for @roleDurable.
+  /// No description provided for @role_durable.
   ///
   /// In en, this message translates to:
   /// **'Durable'**
-  String get roleDurable;
+  String get role_durable;
 
-  /// No description provided for @roleEscape.
+  /// No description provided for @role_escape.
   ///
   /// In en, this message translates to:
   /// **'Escape'**
-  String get roleEscape;
+  String get role_escape;
 
-  /// No description provided for @rolePusher.
+  /// No description provided for @role_pusher.
   ///
   /// In en, this message translates to:
   /// **'Pusher'**
-  String get rolePusher;
+  String get role_pusher;
 
-  /// No description provided for @roleInitiator.
+  /// No description provided for @role_initiator.
   ///
   /// In en, this message translates to:
   /// **'Initiator'**
-  String get roleInitiator;
+  String get role_initiator;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

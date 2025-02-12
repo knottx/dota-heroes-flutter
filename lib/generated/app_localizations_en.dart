@@ -7,56 +7,56 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get commonCancel => 'Cancel';
+  String get common_cancel => 'Cancel';
 
   @override
-  String get commonOk => 'OK';
+  String get common_ok => 'OK';
 
   @override
-  String get errorTitle => 'Sorry';
+  String get error_title => 'Sorry';
 
   @override
-  String get attackTypeMelee => 'Melee';
+  String get attack_type_melee => 'Melee';
 
   @override
-  String get attackTypeRanged => 'Ranged';
+  String get attack_type_ranged => 'Ranged';
 
   @override
-  String get attributeStr => 'Strength';
+  String get attribute_str => 'Strength';
 
   @override
-  String get attributeAgi => 'Agility';
+  String get attribute_agi => 'Agility';
 
   @override
-  String get attributeInt => 'Intelligence';
+  String get attribute_int => 'Intelligence';
 
   @override
-  String get attributeUniversal => 'universal';
+  String get attribute_universal => 'universal';
 
   @override
-  String get roleCarry => 'Carry';
+  String get role_carry => 'Carry';
 
   @override
-  String get roleSupport => 'Support';
+  String get role_support => 'Support';
 
   @override
-  String get roleNuker => 'Nuker';
+  String get role_nuker => 'Nuker';
 
   @override
-  String get roleDisabler => 'Disabler';
+  String get role_disabler => 'Disabler';
 
   @override
-  String get roleJungler => 'Jungler';
+  String get role_jungler => 'Jungler';
 
   @override
-  String get roleDurable => 'Durable';
+  String get role_durable => 'Durable';
 
   @override
-  String get roleEscape => 'Escape';
+  String get role_escape => 'Escape';
 
   @override
-  String get rolePusher => 'Pusher';
+  String get role_pusher => 'Pusher';
 
   @override
-  String get roleInitiator => 'Initiator';
+  String get role_initiator => 'Initiator';
 }
