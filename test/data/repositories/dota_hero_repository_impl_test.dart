@@ -1,5 +1,5 @@
-import 'package:dota_heroes/data/data_sources/remote_data_sources/dota_hero_remote_data_source_impl.dart';
 import 'package:dota_heroes/data/repositories/dota_hero_repository_impl.dart';
+import 'package:dota_heroes/domain/data_sources/remote_data_sources/dota_hero_remote_data_source.dart';
 import 'package:dota_heroes/domain/entities/dota_hero.dart';
 import 'package:dota_heroes/domain/entities/dota_hero_attribute.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -8,7 +8,7 @@ import 'package:mockito/mockito.dart';
 
 import 'dota_hero_repository_impl_test.mocks.dart';
 
-@GenerateMocks([DotaHeroRemoteDataSourceImpl])
+@GenerateMocks([DotaHeroRemoteDataSource])
 void main() {
   late MockDotaHeroRemoteDataSource mockRemoteDataSource;
   late DotaHeroRepositoryImpl repository;

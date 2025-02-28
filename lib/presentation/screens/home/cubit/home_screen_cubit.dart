@@ -7,15 +7,17 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreenCubit extends Cubit<HomeScreenState> {
-  final HomeScreenUseCase _homeScreenUseCase;
+  final HomeScreenUseCase _useCase;
 
   final ScrollController scrollController = ScrollController();
 
   final TextEditingController searchTextController = TextEditingController();
 
   HomeScreenCubit(
-    this._homeScreenUseCase,
-  ) : super(const HomeScreenState()) {
+    this._useCase,
+  ) : super(const HomeScreenState());
+
+  void init() {
     searchTextController.addListener(() {
       emit(
         state.copyWith(
@@ -23,8 +25,6 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
         ),
       );
     });
-
-    _getDotaHeroes();
   }
 
   @override
@@ -36,7 +36,7 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
 
   Future<void> onRefresh() async {
     HapticFeedback.lightImpact();
-    return _getDotaHeroes();
+    return getDotaHeroes();
   }
 
   void onTapFilteredAtttibute(DotaHeroAttribute attribute) {
@@ -63,17 +63,19 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
   }
 
   void _scrollToTop() {
-    scrollController.animateTo(
-      0,
-      duration: const Duration(milliseconds: 250),
-      curve: Curves.linear,
-    );
+    if (scrollController.hasClients) {
+      scrollController.animateTo(
+        0,
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.linear,
+      );
+    }
   }
 
-  void _getDotaHeroes() async {
+  void getDotaHeroes() async {
     emit(state.loading());
 
-    final result = await _homeScreenUseCase.getHeroStats();
+    final result = await _useCase.getHeroStats();
 
     result.when(
       success: (data) {

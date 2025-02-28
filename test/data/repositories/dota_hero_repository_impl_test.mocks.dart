@@ -5,7 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:dota_heroes/data/data_sources/remote_data_sources/dota_hero_remote_data_source_impl.dart'
+import 'package:dota_heroes/domain/data_sources/remote_data_sources/dota_hero_remote_data_source.dart'
     as _i2;
 import 'package:dota_heroes/domain/entities/dota_hero.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
@@ -28,14 +28,16 @@ import 'package:mockito/mockito.dart' as _i1;
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockDotaHeroRemoteDataSource extends _i1.Mock
-    implements _i2.DotaHeroRemoteDataSourceImpl {
+    implements _i2.DotaHeroRemoteDataSource {
   MockDotaHeroRemoteDataSource() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i3.Future<List<_i4.DotaHero>> getHeroStats() => (super.noSuchMethod(
-        Invocation.method(#getHeroStats, []),
-        returnValue: _i3.Future<List<_i4.DotaHero>>.value(<_i4.DotaHero>[]),
-      ) as _i3.Future<List<_i4.DotaHero>>);
+  _i3.Future<List<_i4.DotaHero>> getHeroStats() =>
+      (super.noSuchMethod(
+            Invocation.method(#getHeroStats, []),
+            returnValue: _i3.Future<List<_i4.DotaHero>>.value(<_i4.DotaHero>[]),
+          )
+          as _i3.Future<List<_i4.DotaHero>>);
 }

@@ -10,6 +10,7 @@ import 'package:dota_heroes/domain/repositories/dota_hero_repository.dart';
 import 'package:dota_heroes/domain/use_cases/home_screen_use_case.dart';
 import 'package:dota_heroes/generated/assets.gen.dart';
 import 'package:dota_heroes/main.dart';
+import 'package:dota_heroes/presentation/global_widgets/overlay_loading_indicator.dart';
 import 'package:dota_heroes/presentation/screens/home/cubit/home_screen_cubit.dart';
 import 'package:dota_heroes/presentation/screens/home/cubit/home_screen_state.dart';
 import 'package:dota_heroes/presentation/screens/home/widgets/home_app_bar_bottom.dart';
@@ -46,6 +47,16 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  late final HomeScreenCubit _cubit;
+
+  @override
+  void initState() {
+    super.initState();
+    _cubit = context.read<HomeScreenCubit>();
+    _cubit.init();
+    _cubit.getDotaHeroes();
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HomeScreenCubit, HomeScreenState>(
@@ -79,7 +90,7 @@ class _HomeViewState extends State<HomeView> {
                 ),
               ),
             ),
-            // OverlayLoadingIndicator(state.status.isLoading),
+            OverlayLoadingIndicator(state.status.isLoading),
           ],
         );
       },

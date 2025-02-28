@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dota_heroes/app/core/app_error.dart';
 import 'package:dota_heroes/domain/core/result.dart';
 import 'package:dota_heroes/domain/entities/dota_hero.dart';
+import 'package:dota_heroes/domain/entities/dota_hero_attribute.dart';
 import 'package:dota_heroes/domain/entities/sort_type.dart';
 import 'package:dota_heroes/domain/use_cases/home_screen_use_case.dart';
 import 'package:dota_heroes/presentation/screens/home/cubit/home_screen_cubit.dart';
@@ -14,8 +15,12 @@ import 'home_screen_cubit_test.mocks.dart';
 
 @GenerateMocks([HomeScreenUseCase])
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   late MockHomeScreenUseCase mockUseCase;
-  late HomeScreenCubit cubit;
+
+  final dummyHero = const DotaHero(id: 1, name: 'Test Hero');
+  final dummyError = const AppError(message: 'Test error');
 
   setUp(() {
     mockUseCase = MockHomeScreenUseCase();
@@ -23,65 +28,126 @@ void main() {
 
   group('HomeScreenCubit', () {
     blocTest<HomeScreenCubit, HomeScreenState>(
-      'emits loading then ready when getHeroStats succeeds',
-      build: () {
-        final heroes = [const DotaHero(id: 1, name: 'Axe')];
-        when(mockUseCase.getHeroStats())
-            .thenAnswer((_) async => Result.success(heroes));
-
-        return HomeScreenCubit(mockUseCase);
-      },
-      verify: (_) {
-        verify(mockUseCase.getHeroStats()).called(1);
+      'emits updated searchText state when text controller changes',
+      build: () => HomeScreenCubit(mockUseCase)..init(),
+      act: (cubit) {
+        cubit.searchTextController.text = 'new search';
+        cubit.searchTextController.notifyListeners();
       },
       expect: () => [
-        const HomeScreenState(
-          status: HomeScreenStatus.ready,
-          sortType: SortType.ascending,
-          filteredAttribute: null,
-          showFavorites: false,
-          searchText: '',
-          dotaHeroes: [DotaHero(id: 1, name: 'Axe')],
-          error: null,
+        predicate<HomeScreenState>((state) => state.searchText == 'new search'),
+      ],
+    );
+
+    blocTest<HomeScreenCubit, HomeScreenState>(
+      'onTapFilteredAtttibute toggles filteredAttribute correctly',
+      build: () => HomeScreenCubit(mockUseCase),
+      act: (cubit) {
+        final attribute = DotaHeroAttribute.str;
+        cubit.onTapFilteredAtttibute(attribute);
+        cubit.onTapFilteredAtttibute(attribute);
+      },
+      expect: () => [
+        predicate<HomeScreenState>(
+          (state) => state.filteredAttribute == DotaHeroAttribute.str,
+        ),
+        predicate<HomeScreenState>((state) => state.filteredAttribute == null),
+      ],
+    );
+
+    blocTest<HomeScreenCubit, HomeScreenState>(
+      'onTapSortType toggles sortType from ascending to descending and back',
+      build: () => HomeScreenCubit(mockUseCase),
+      act: (cubit) {
+        cubit.onTapSortType();
+        cubit.onTapSortType();
+      },
+      expect: () => [
+        predicate<HomeScreenState>(
+          (state) => state.sortType == SortType.descending,
+        ),
+        predicate<HomeScreenState>(
+          (state) => state.sortType == SortType.ascending,
         ),
       ],
     );
 
     blocTest<HomeScreenCubit, HomeScreenState>(
-      'emits loading then failure when getHeroStats fails',
-      build: () {
-        final error = const AppError(message: 'Failed to load heroes');
-        when(mockUseCase.getHeroStats())
-            .thenAnswer((_) async => Result.failure(error));
-        return HomeScreenCubit(mockUseCase);
-      },
-      verify: (_) {
-        verify(mockUseCase.getHeroStats()).called(1);
+      'onTapShowFavorites toggles showFavorites flag',
+      build: () => HomeScreenCubit(mockUseCase),
+      act: (cubit) {
+        cubit.onTapShowFavorites();
+        cubit.onTapShowFavorites();
       },
       expect: () => [
-        const HomeScreenState(
-          status: HomeScreenStatus.failure,
-          sortType: SortType.ascending,
-          filteredAttribute: null,
-          showFavorites: false,
-          searchText: '',
-          dotaHeroes: [],
-          error: AppError(message: 'Failed to load heroes'),
+        predicate<HomeScreenState>((state) => state.showFavorites == true),
+        predicate<HomeScreenState>((state) => state.showFavorites == false),
+      ],
+    );
+
+    blocTest<HomeScreenCubit, HomeScreenState>(
+      'getDotaHeroes emits loading then ready when use case returns success',
+      build: () {
+        when(mockUseCase.getHeroStats()).thenAnswer(
+          (_) async => Result.success([dummyHero]),
+        );
+        return HomeScreenCubit(mockUseCase);
+      },
+      act: (cubit) => cubit.getDotaHeroes(),
+      expect: () => [
+        predicate<HomeScreenState>(
+          (state) => state.status == HomeScreenStatus.loading,
+        ),
+        predicate<HomeScreenState>(
+          (state) =>
+              state.status == HomeScreenStatus.ready &&
+              state.dotaHeroes.length == 1 &&
+              state.dotaHeroes.first.id == dummyHero.id,
         ),
       ],
     );
 
-    test('searchTextController listener updates state.searchText', () async {
-      when(mockUseCase.getHeroStats())
-          .thenAnswer((_) async => Result.success([]));
-      cubit = HomeScreenCubit(mockUseCase);
+    blocTest<HomeScreenCubit, HomeScreenState>(
+      'getDotaHeroes emits loading then failure when use case returns failure',
+      build: () {
+        when(mockUseCase.getHeroStats()).thenAnswer(
+          (_) async => Result.failure(dummyError),
+        );
+        return HomeScreenCubit(mockUseCase);
+      },
+      act: (cubit) => cubit.getDotaHeroes(),
+      expect: () => [
+        predicate<HomeScreenState>(
+          (state) => state.status == HomeScreenStatus.loading,
+        ),
+        predicate<HomeScreenState>(
+          (state) =>
+              state.status == HomeScreenStatus.failure &&
+              state.error == dummyError,
+        ),
+      ],
+    );
 
-      cubit.searchTextController.text = 'test search';
-
-      await Future.delayed(const Duration(milliseconds: 10));
-
-      expect(cubit.state.searchText, equals('test search'));
-      await cubit.close();
-    });
+    blocTest<HomeScreenCubit, HomeScreenState>(
+      'onRefresh triggers getDotaHeroes and emits loading then ready',
+      build: () {
+        when(mockUseCase.getHeroStats()).thenAnswer(
+          (_) async => Result.success([dummyHero]),
+        );
+        return HomeScreenCubit(mockUseCase);
+      },
+      act: (cubit) => cubit.onRefresh(),
+      expect: () => [
+        predicate<HomeScreenState>(
+          (state) => state.status == HomeScreenStatus.loading,
+        ),
+        predicate<HomeScreenState>(
+          (state) =>
+              state.status == HomeScreenStatus.ready &&
+              state.dotaHeroes.length == 1 &&
+              state.dotaHeroes.first.id == dummyHero.id,
+        ),
+      ],
+    );
   });
 }

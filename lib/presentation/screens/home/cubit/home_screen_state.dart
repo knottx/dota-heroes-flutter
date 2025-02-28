@@ -1,3 +1,4 @@
+import 'package:dota_heroes/app/core/app_error.dart';
 import 'package:dota_heroes/domain/entities/dota_hero.dart';
 import 'package:dota_heroes/domain/entities/dota_hero_attribute.dart';
 import 'package:dota_heroes/domain/entities/sort_type.dart';
@@ -20,7 +21,7 @@ class HomeScreenState extends Equatable {
   final bool showFavorites;
   final String searchText;
   final List<DotaHero> dotaHeroes;
-  final Object? error;
+  final AppError? error;
 
   const HomeScreenState({
     this.status = HomeScreenStatus.initial,
@@ -50,7 +51,7 @@ class HomeScreenState extends Equatable {
     bool? showFavorites,
     String? searchText,
     List<DotaHero>? dotaHeroes,
-    Object? error,
+    AppError? error,
   }) {
     return HomeScreenState(
       status: status ?? this.status,
@@ -91,7 +92,7 @@ class HomeScreenState extends Equatable {
   }
 
   HomeScreenState failure(
-    Object error,
+    AppError error,
   ) {
     return copyWith(
       status: HomeScreenStatus.failure,
